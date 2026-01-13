@@ -3,8 +3,6 @@ import { useLocale, useTranslations } from 'next-intl';
 import { FunctionComponent } from 'react';
 import { useUserContext } from '../../components/UserContext';
 
-const config = require(`/_db/${process.env.NEXT_PUBLIC_SITE_KEY}/config.json`);
-
 export interface RaceRowTR {
   collapsed: Boolean;
   hasOccured: boolean;
@@ -17,6 +15,7 @@ export interface RaceRowTR {
   eventLocaleKey: string;
   slug: string;
   index: number;
+  config: any;
 }
 
 const RaceTR: FunctionComponent<RaceRowTR> = ({
@@ -31,7 +30,8 @@ const RaceTR: FunctionComponent<RaceRowTR> = ({
   eventLocaleKey,
   slug,
   index,
-}: Props) => {
+  config,
+}: RaceRowTR) => {
   const t = useTranslations('All');
   const locale = useLocale();
 
@@ -51,7 +51,7 @@ const RaceTR: FunctionComponent<RaceRowTR> = ({
 
     return (
       <tr
-        className={`${collapsed ? 'hidden' : ''} ${hasOccured ? 'line-through text-gray-400' : ''} divide-y divide-white/5`}
+        className={`${collapsed ? 'hidden' : ''} ${hasOccured ? 'line-through text-muted' : ''} divide-y divide-white/5`}
       >
         <td className=""></td>
         <td className="p-4">{sessionTitle}</td>
@@ -67,7 +67,7 @@ const RaceTR: FunctionComponent<RaceRowTR> = ({
   } else {
     return (
       <tr
-        className={`${collapsed ? 'hidden' : ''} ${hasOccured ? 'line-through text-gray-400' : ''} ${!hasOccured && isFeaturedSession ? 'font-bold' : ''} ${isNextRace && isFeaturedSession ? 'text-yellow-600' : ''}`}
+        className={`${collapsed ? 'hidden' : ''} ${hasOccured ? 'line-through text-muted' : ''} ${!hasOccured && isFeaturedSession ? 'font-bold' : ''} ${isNextRace && isFeaturedSession ? 'text-yellow-600' : ''}`}
       >
         <td className=""></td>
         <td className="p-4">

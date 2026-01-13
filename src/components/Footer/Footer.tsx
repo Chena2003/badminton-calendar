@@ -9,9 +9,11 @@ import EmailIcon from '../Icons/EmailIcon';
 import SupportButton from '../SupportButton/SupportButton';
 import Link from 'next/link';
 
-const config = require(`/_db/${process.env.NEXT_PUBLIC_SITE_KEY}/config.json`);
+interface Props {
+  config: any;
+}
 
-const Footer = () => {
+const Footer = ({ config }: Props) => {
   const t = useTranslations('All');
 
   const [showHomeScreenPrompt, setShowHomeScreenPrompt] = useState(false);
@@ -22,13 +24,13 @@ const Footer = () => {
     var iOS = /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
     var prompt = window.localStorage.a2hs_message;
 
-    if (iOS && !standalone && !prompt && config.supportsWebPush) {
+    if (iOS && !standalone && !prompt && config?.supportsWebPush) {
       setShowHomeScreenPrompt(true);
     }
   }, []);
 
   const dismissPrompt = () => {
-    localStorage.setItem('a2hs_message', true);
+    localStorage.setItem('a2hs_message', 'true');
     setShowHomeScreenPrompt(false);
   };
 
@@ -51,33 +53,6 @@ const Footer = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 pt-4 px-2 text-center md:text-left">
           <div>
-            <p className="text-base text-gray-400 mb-2">
-              &copy; {new Date().getFullYear()}{' '}
-              <a
-                href="https://andydev.co.uk"
-                rel="author"
-                className="text-gray-300"
-              >
-                Andrew Yates
-              </a>
-              ,&nbsp;
-              <a
-                href="https://andyhiggs.uk/"
-                rel="author"
-                className="text-gray-300"
-              >
-                Andy Higgs
-              </a>
-              ,&nbsp;
-              <a
-                href="https://sijobling.com"
-                rel="author"
-                className="text-gray-300"
-              >
-                Si Jobling
-              </a>{' '}
-            </p>
-
             <p className="text-base text-gray-400 text-xsm px-2 md:px-0">
               {t(`${process.env.NEXT_PUBLIC_SITE_KEY}.footnote`)}
             </p>
@@ -87,7 +62,7 @@ const Footer = () => {
               {' • '}
               <Link href={`timezones`}>Timezones</Link>
 
-              {config.trmnlPlugin && (
+              {config?.trmnlPlugin && (
                 <>
                   {' • '}
                   <Link href={config.trmnlPlugin}>TRMNL Plugin</Link>
@@ -96,8 +71,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div>
-          </div>
+          <div></div>
         </div>
 
         <div className="max-w-7xl mx-auto overflow-hidden pb-8 pt-2">

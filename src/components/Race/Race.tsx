@@ -14,8 +14,6 @@ import TBCBadge from '../Badges/TBCBadge';
 import RaceTR from '../Race/RaceTR';
 import Toggle from '../Toggle/Toggle';
 
-const config = require(`/_db/${process.env.NEXT_PUBLIC_SITE_KEY}/config.json`);
-
 export interface RaceRow {
   isNextRace: boolean;
   hasOccured: boolean;
@@ -23,6 +21,8 @@ export interface RaceRow {
   index: number;
   item: RaceModel;
   collapsed: boolean;
+  config: any;
+  currentTime: Date;
 }
 
 const Race = ({
@@ -31,6 +31,8 @@ const Race = ({
   shouldCollapsePastRaces,
   hasOccured,
   isNextRace,
+  config,
+  currentTime,
 }: RaceRow) => {
   const t = useTranslations('All');
   const plausible = usePlausible();
@@ -72,11 +74,13 @@ const Race = ({
 
   const race: RaceRow = {
     isNextRace: isNextRace,
-    hasOccured: dayjs(item.sessions[lastEventSessionKey]).isBefore(Date()),
+    hasOccured: dayjs(item.sessions[lastEventSessionKey]).isBefore(dayjs(currentTime)),
     shouldCollapsePastRaces: shouldCollapsePastRaces,
     index,
     item: item,
     collapsed: !isNextRace,
+    config: config,
+    currentTime: currentTime,
   };
 
   return (
@@ -103,7 +107,14 @@ const Race = ({
           id={`${item.slug}-header`}
         >
           <div className={`${titleRowClasses(race)}`}>
-            <div className={titleRowTextClasses(race)}>{raceTitle}</div>
+            <div className={titleRowTextClasses(race)}>
+              {raceTitle}
+              {item.location && (
+                <span className="ml-2 font-normal text-muted text-sm">
+                  - {item.location}
+                </span>
+              )}
+            </div>
           </div>
           {isNextRace && !item.tbc && !item.canceled && <NextBadge />}
 
@@ -189,7 +200,7 @@ const Race = ({
 
         const hasOccured = dayjs(props.item.sessions[sessionKey])
           .add(2, 'hours')
-          .isBefore(Date());
+          .isBefore(dayjs(props.currentTime));
 
         rows.push(
           <RaceTR
@@ -205,6 +216,7 @@ const Race = ({
             eventLocaleKey={`races.${props.item.localeKey}`}
             slug={props.item.slug}
             index={index}
+            config={config}
           />,
         );
       });
@@ -286,7 +298,7 @@ const Race = ({
       if (
         !dayjs(props.item.sessions[lastEventSessionKey])
           .add(2, 'hours')
-          .isBefore(Date()) &&
+          .isBefore(dayjs(props.currentTime)) &&
         !props.item.canceled
       ) {
         classes += 'font-semibold ';
