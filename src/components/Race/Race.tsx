@@ -232,7 +232,7 @@ const Race = ({
   function rowClasses(props: RaceRow) {
     var classes = '';
     if (props.index % 2 === 1) {
-      classes += 'rounded bg-row-gray ';
+      classes += 'rounded bg-row ';
     }
 
     // Fade out TBC races a little
@@ -253,18 +253,18 @@ const Race = ({
 
       // Strikethrough past races
       if (props.hasOccured && !props.item.canceled) {
-        classes += 'line-through text-gray-400 ';
+        classes += 'line-through text-muted ';
       } else if (props.hasOccured && props.item.canceled) {
-        classes += 'text-gray-400 ';
+        classes += 'text-muted ';
       } else {
-        classes += 'text-white ';
+        classes += 'text-primary ';
       }
 
       if (props.hasOccured && props.shouldCollapsePastRaces) {
         classes += 'hidden';
       }
     } else {
-      classes += 'text-white ';
+      classes += 'text-primary ';
     }
 
     return classes;
