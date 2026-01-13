@@ -1,0 +1,9 @@
+{
+  "sites": [
+    {
+      "name": "Badminton",
+      "url": "https://badminton-calendar.com",
+      "siteKey": "badminton"
+    }
+  ]
+}

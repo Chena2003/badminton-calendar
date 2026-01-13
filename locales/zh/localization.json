@@ -1,0 +1,170 @@
+{
+  "All": {
+    "date": "日期",
+    "time": "时间",
+    "showPreviousRaces": "显示过去的比赛",
+    "hidePreviousRaces": "隐藏过去的比赛",
+    "badges": {
+      "tbc": "TBC",
+      "tbc_title": "待确认",
+      "tickets": "门票",
+      "canceled": "已取消",
+      "next": "即将开始"
+    },
+    "sessionTypes": {
+      "group": "小组赛",
+      "semifinal": "半决赛",
+      "final": "决赛"
+    },
+    "schedule": {
+      "day1": "第1天",
+      "day2": "第2天",
+      "day3": "第3天",
+      "day4": "第4天",
+      "day5": "第5天",
+      "day6": "第6天",
+      "day7": "第7天",
+      "day8": "第8天",
+      "day9": "第9天",
+      "day10": "第10天",
+      "group": "小组赛",
+      "semifinal": "半决赛",
+      "final": "决赛"
+    },
+    "badminton": {
+      "title": "羽毛球赛程日历",
+      "footnote": "所有时间均为当地时间，可能会有变动。",
+      "seo": {
+        "description": "2025年世界羽联赛程日历，包含所有公开赛、锦标赛、总决赛的完整赛程信息。",
+        "keywords": "羽毛球,赛程,日历,世界羽联,BWF,2025,公开赛,世锦赛"
+      }
+    },
+    "races": {
+      "malaysia-open": "马来西亚公开赛",
+      "india-open": "印度公开赛",
+      "indonesia-masters": "印尼大师赛",
+      "thailand-masters": "泰国大师赛",
+      "german-open": "德国公开赛",
+      "all-england-open": "全英公开赛",
+      "swiss-open": "瑞士公开赛",
+      "china-open": "中国公开赛",
+      "singapore-open": "新加坡公开赛",
+      "malaysia-masters": "马来西亚大师赛",
+      "thailand-open": "泰国公开赛",
+      "indonesia-open": "印尼公开赛",
+      "australia-open": "澳大利亚公开赛",
+      "japan-open": "日本公开赛",
+      "korea-open": "韩国公开赛",
+      "chinese-taipei-open": "中华台北公开赛",
+      "china-masters": "中国大师赛",
+      "world-championships": "世界锦标赛",
+      "hong-kong-open": "香港公开赛",
+      "vietnam-open": "越南公开赛",
+      "arctic-open": "北极公开赛",
+      "denmark-open": "丹麦公开赛",
+      "french-open": "法国公开赛",
+      "hylo-open": "海洛公开赛",
+      "fuzhou-china-masters": "福州中国大师赛",
+      "shenzhen-china-masters": "深圳中国大师赛",
+      "korea-masters": "韩国大师赛",
+      "world-tour-finals": "世界羽联总决赛",
+      "asian-games": "亚运会",
+      "syed-modi-international": "赛义德·莫迪羽毛球国际赛",
+      "guwahati-masters": "古瓦哈蒂羽毛球大师赛",
+      "odisha-masters": "奥迪沙羽毛球大师赛",
+      "ruichang-china-masters": "中国瑞昌羽毛球大师赛",
+      "orleans-masters": "奥尔良羽毛球大师赛",
+      "asian-championships": "亚洲羽毛球锦标赛",
+      "european-championships": "欧洲羽毛球锦标赛",
+      "thomas-and-uber-cup": "汤姆斯杯&尤伯杯",
+      "macau-open": "澳门羽毛球公开赛",
+      "us-open": "美国羽毛球公开赛",
+      "canada-open": "加拿大羽毛球公开赛",
+      "abu-dhabi-masters": "阿布扎比羽毛球大师赛",
+      "kumamoto-japan-masters": "日本熊本羽毛球大师赛",
+      "kaohsiung-masters": "高雄羽毛球大师赛"
+    },
+    "eventTypes": {
+      "open": "公开赛",
+      "championship": "锦标赛",
+      "finals": "总决赛",
+      "olympics": "奥运会",
+      "asiangames": "亚运会"
+    },
+    "categories": {
+      "1000": "1000分",
+      "750": "750分",
+      "500": "500分",
+      "300": "300分",
+      "100": "100分",
+      "series": "巡回赛",
+      "all": "全部"
+    },
+    "options": {
+      "calendar": "在你的日历App中添加赛程信息",
+      "timezonePicker": {
+        "showing": "当前显示的时间，时区为",
+        "pick": "选择时区",
+        "detect": "自动检测"
+      },
+      "formatPicker": {
+        "title": "时间格式",
+        "12hr": "12小时制",
+        "24hr": "24小时制"
+      },
+      "button": "完成"
+    },
+    "yearSelector": "年份",
+    "years": {
+      "title": "选择年份"
+    },
+    "languageSelector": "选择语言",
+    "contribute": "添加语言",
+    "javascript": "羽毛球日历需要启用 JavaScript 以获得最佳体验。",
+    "footer": {
+      "coffee": "支持这个项目，给我们买杯咖啡吧",
+      "twitter": "我们在 Twitter",
+      "github": "在 GitHub 上开源",
+      "privacy": "隐私政策",
+      "terms": "使用条款",
+      "homescreen": "要将此网站添加到您的主屏幕，请按分享图标，然后选择\"添加到主屏幕\"。"
+    },
+    "header": {
+      "title": "羽毛球赛程日历",
+      "subtitle": "2025年世界羽联赛程"
+    },
+    "form": {
+      "title": "生成羽毛球比赛日历",
+      "description": "选择你想要关注的比赛类型和级别，然后生成自定义日历。",
+      "eventTypes": "包含赛事类型",
+      "includeOpen": "公开赛",
+      "includeChampionship": "锦标赛（世锦赛、洲际锦标赛等）",
+      "includeFinals": "总决赛",
+      "includeOlympics": "奥运会",
+      "includeAsianGames": "亚运会",
+      "minCategory": "最低等级",
+      "onlyMajor": "只显示重点比赛",
+      "onlyMajorHint": "（1000分公开赛、锦标赛、总决赛、奥运会、亚运会）",
+      "sessionTypes": "包含比赛日类型",
+      "includeGroup": "小组赛",
+      "includeSemifinal": "半决赛",
+      "includeFinal": "决赛",
+      "alarm": "比赛前提醒",
+      "alarmMinutes": "分钟",
+      "button": "生成日历",
+      "nonOptionsSelected": "请至少选择一种赛事类型"
+    },
+    "download": {
+      "title": "下载日历",
+      "webcalTitle": "WebCal 订阅",
+      "webcalDescription": "订阅后，当比赛时间或赛程更新时，你的日历会自动同步更新。",
+      "webcalButton": "订阅日历",
+      "gcalTitle": "添加到 Google 日历",
+      "gcalNotificationNotice": "注意：Google 日历不支持自定义闹钟时间。",
+      "gcalAddToGoogleCalendar": "添加到 Google 日历",
+      "icsTitle": "ICS 文件下载",
+      "icsDescription": "下载ICS文件后，可以导入到Outlook、Apple日历等应用。",
+      "icsButton": "下载ICS文件"
+    }
+  }
+}

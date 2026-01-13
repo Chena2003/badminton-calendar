@@ -1,0 +1,130 @@
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --color-dark-green: #0a2f23;
+  --color-mid-green: #1b5e20;
+  --color-light-green: #4caf50;
+  --color-row-gray: #151515;
+  --color-row-gray-darker: #101010;
+  --font-league-spartan: League Spartan;
+  --text-xsm: 0.65rem;
+}
+
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #1a1a1a;
+  --card-bg: #ffffff;
+  --row-bg: #ffffff;
+  --row-hover: #f0f0f0;
+  --badminton-net-pattern: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231b5e20' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.dark {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --card-bg: #151515;
+  --row-bg: #151515;
+  --row-hover: #222222;
+  --badminton-net-pattern: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 400;
+  background-color: var(--bg-color);
+  background-image: var(--badminton-net-pattern);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI',
+    'Fira Sans', Avenir, 'Helvetica Neue', 'Lucida Grande', sans-serif;
+  text-rendering: optimizeLegibility;
+  height: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.form-tick:checked {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+  border-color: transparent;
+  background-color: currentColor;
+  background-size: 100% 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+@layer components {
+  p,
+  ul,
+  ol,
+  li {
+    color: var(--text-color);
+  }
+
+  a {
+    @apply font-semibold;
+  }
+
+  h6 {
+    @apply text-base font-bold font-league-spartan font-bold;
+    color: var(--text-color);
+  }
+
+  h5 {
+    @apply text-lg font-bold font-league-spartan font-bold;
+    color: var(--text-color);
+  }
+
+  h4 {
+    @apply text-xl font-bold font-league-spartan font-bold;
+    color: var(--text-color);
+  }
+
+  h3 {
+    @apply text-2xl font-bold font-league-spartan font-bold uppercase;
+    color: var(--text-color);
+  }
+
+  h2 {
+    @apply text-3xl font-bold tracking-normal font-league-spartan font-bold uppercase;
+    color: var(--text-color);
+  }
+
+  h1 {
+    @apply text-4xl font-bold tracking-normal font-league-spartan font-extrabold uppercase;
+    color: var(--text-color);
+  }
+
+  .btn {
+    @apply items-center justify-center px-4 py-2 space-x-2 text-sm font-medium transition-shadow bg-mid-green rounded shadow-sm hover:bg-light-green cursor-pointer focus:outline-none text-white;
+  }
+
+  .destructive-btn {
+    @apply items-center justify-center px-4 py-2 space-x-2 text-sm font-medium transition-shadow bg-red-800 rounded shadow-sm hover:bg-red-900 cursor-pointer focus:outline-none text-white;
+  }
+
+  .collapse-btn {
+    @apply items-center justify-center px-4 py-2 space-x-2 text-sm font-medium transition-shadow rounded shadow-sm cursor-pointer focus:outline-none;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid #333;
+  }
+  
+  .dark .collapse-btn {
+    border: none;
+  }
+
+  .support-btn {
+    @apply flex items-center justify-center px-2 py-2 space-x-2 text-sm font-medium transition-shadow bg-red-600 rounded shadow-sm hover:bg-red-700 cursor-pointer focus:outline-none w-12 h-12 text-white;
+  }
+
+  .support-btn-rounded {
+    @apply flex items-center justify-center px-2 py-2 space-x-2 text-sm font-medium transition-shadow bg-red-600 rounded-full shadow-sm hover:bg-red-700 cursor-pointer focus:outline-none w-12 h-12 text-white;
+  }
+
+  .support-btn-rounded-desktop {
+    @apply flex items-center justify-center px-2 py-2 space-x-2 text-sm font-medium transition-shadow bg-red-600 rounded-full shadow-sm hover:bg-red-700 cursor-pointer focus:outline-none w-16 h-16 text-white;
+  }
+}

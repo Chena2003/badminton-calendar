@@ -1,0 +1,31 @@
+Error: MISSING_MESSAGE: Could not resolve `All.schedule.day10` in messages for locale `zh`.
+
+Error: MISSING_MESSAGE: Could not resolve `All.schedule.day9` in messages for locale `zh`.
+    at eval (src\components\Race\Race.tsx:186:10)
+    at Array.forEach (<anonymous>)
+    at sessionRows (src\components\Race\Race.tsx:182:11)
+    at Race (src\components\Race\Race.tsx:172:7)
+  184 |
+  185 |         const sessionTitle =
+> 186 |           t(`schedule.${sessionKey}`) != `All.schedule.${sessionKey}`
+      |          ^
+  187 |             ? t(`schedule.${sessionKey}`)
+  188 |             : sessionKey.replace(/./, (x) => x.toUpperCase());
+  189 | {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'Could not resolve `All.schedule.day9` in messages for locale `zh`.'
+}
+Error: MISSING_MESSAGE: Could not resolve `All.schedule.day10` in messages for locale `zh`.
+    at eval (src\components\Race\Race.tsx:186:10)
+    at Array.forEach (<anonymous>)
+    at sessionRows (src\components\Race\Race.tsx:182:11)
+    at Race (src\components\Race\Race.tsx:172:7)
+  184 |
+  185 |         const sessionTitle =
+> 186 |           t(`schedule.${sessionKey}`) != `All.schedule.${sessionKey}`
+      |          ^
+  187 |             ? t(`schedule.${sessionKey}`)
+  188 |             : sessionKey.replace(/./, (x) => x.toUpperCase());
+  189 | {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'Could not resolve `All.schedule.day10` in messages for locale `zh`.'

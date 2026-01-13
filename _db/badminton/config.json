@@ -1,0 +1,53 @@
+{
+  "siteKey": "badminton",
+  "url": "badminton-calendar.com",
+  "calendarOutputYear": 2026,
+  "availableYears": [2025, 2026],
+  "featuredSessions": [],
+  "collapsedSessions": [],
+  "eventTypes": [
+    {
+      "key": "open",
+      "name": "公开赛",
+      "categories": ["1000", "750", "500", "300", "100", "series"],
+      "majorCategories": ["1000"]
+    },
+    {
+      "key": "championship",
+      "name": "锦标赛",
+      "majorEvent": true
+    },
+    {
+      "key": "finals",
+      "name": "总决赛",
+      "majorEvent": true
+    },
+    {
+      "key": "olympics",
+      "name": "奥运会",
+      "majorEvent": true
+    },
+    {
+      "key": "asiangames",
+      "name": "亚运会",
+      "majorEvent": true
+    }
+  ],
+  "sessionTypes": {
+    "group": {
+      "key": "group",
+      "name": "小组赛",
+      "order": 1
+    },
+    "semifinal": {
+      "key": "semifinal",
+      "name": "半决赛",
+      "order": 2
+    },
+    "final": {
+      "key": "final",
+      "name": "决赛",
+      "order": 3
+    }
+  }
+}

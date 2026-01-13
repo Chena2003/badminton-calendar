@@ -1,0 +1,786 @@
+{
+  "races": [
+    {
+      "name": "马来西亚公开赛",
+      "englishName": "Malaysia Open",
+      "location": "吉隆坡",
+      "latitude": 3.1390,
+      "longitude": 101.6869,
+      "type": "open",
+      "category": "1000",
+      "isMajor": true,
+      "startDate": "2025-01-07",
+      "endDate": "2025-01-12",
+      "sessions": {
+        "day1": "2025-01-07",
+        "day2": "2025-01-08",
+        "day3": "2025-01-09",
+        "day4": "2025-01-10",
+        "day5": "2025-01-11"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "malaysia-open-2025",
+      "localeKey": "malaysia-open"
+    },
+    {
+      "name": "印度公开赛",
+      "englishName": "India Open",
+      "location": "新德里",
+      "latitude": 28.6139,
+      "longitude": 77.2090,
+      "type": "open",
+      "category": "500",
+      "isMajor": false,
+      "startDate": "2025-01-14",
+      "endDate": "2025-01-19",
+      "sessions": {
+        "day1": "2025-01-14",
+        "day2": "2025-01-15",
+        "day3": "2025-01-16",
+        "day4": "2025-01-17",
+        "day5": "2025-01-18"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "india-open-2025",
+      "localeKey": "india-open"
+    },
+    {
+      "name": "印尼大师赛",
+      "englishName": "Indonesia Masters",
+      "location": "雅加达",
+      "latitude": -6.2088,
+      "longitude": 106.8456,
+      "type": "open",
+      "category": "500",
+      "isMajor": false,
+      "startDate": "2025-01-21",
+      "endDate": "2025-01-26",
+      "sessions": {
+        "day1": "2025-01-21",
+        "day2": "2025-01-22",
+        "day3": "2025-01-23",
+        "day4": "2025-01-24",
+        "day5": "2025-01-25"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "indonesia-masters-2025",
+      "localeKey": "indonesia-masters"
+    },
+    {
+      "name": "泰国大师赛",
+      "englishName": "Thailand Masters",
+      "location": "曼谷",
+      "latitude": 13.7563,
+      "longitude": 100.5018,
+      "type": "open",
+      "category": "300",
+      "isMajor": false,
+      "startDate": "2025-01-28",
+      "endDate": "2025-02-02",
+      "sessions": {
+        "day1": "2025-01-28",
+        "day2": "2025-01-29",
+        "day3": "2025-01-30",
+        "day4": "2025-01-31",
+        "day5": "2025-02-01"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "thailand-masters-2025",
+      "localeKey": "thailand-masters"
+    },
+    {
+      "name": "德国公开赛",
+      "englishName": "German Open",
+      "location": "米尔海姆",
+      "latitude": 51.1797,
+      "longitude": 6.8843,
+      "type": "open",
+      "category": "300",
+      "isMajor": false,
+      "startDate": "2025-02-25",
+      "endDate": "2025-03-02",
+      "sessions": {
+        "day1": "2025-02-25",
+        "day2": "2025-02-26",
+        "day3": "2025-02-27",
+        "day4": "2025-02-28",
+        "day5": "2025-03-01"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "german-open-2025",
+      "localeKey": "german-open"
+    },
+    {
+      "name": "全英公开赛",
+      "englishName": "All England Open",
+      "location": "伯明翰",
+      "latitude": 52.4862,
+      "longitude": -1.8904,
+      "type": "open",
+      "category": "1000",
+      "isMajor": true,
+      "startDate": "2025-03-11",
+      "endDate": "2025-03-16",
+      "sessions": {
+        "day1": "2025-03-11",
+        "day2": "2025-03-12",
+        "day3": "2025-03-13",
+        "day4": "2025-03-14",
+        "day5": "2025-03-15"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "all-england-open-2025",
+      "localeKey": "all-england-open"
+    },
+    {
+      "name": "瑞士公开赛",
+      "englishName": "Swiss Open",
+      "location": "巴塞尔",
+      "latitude": 47.5596,
+      "longitude": 7.5886,
+      "type": "open",
+      "category": "300",
+      "isMajor": false,
+      "startDate": "2025-03-18",
+      "endDate": "2025-03-23",
+      "sessions": {
+        "day1": "2025-03-18",
+        "day2": "2025-03-19",
+        "day3": "2025-03-20",
+        "day4": "2025-03-21",
+        "day5": "2025-03-22"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "swiss-open-2025",
+      "localeKey": "swiss-open"
+    },
+    {
+      "name": "中国公开赛",
+      "englishName": "China Open",
+      "location": "常州",
+      "latitude": 31.8113,
+      "longitude": 119.9741,
+      "type": "open",
+      "category": "1000",
+      "isMajor": true,
+      "startDate": "2025-03-25",
+      "endDate": "2025-03-30",
+      "sessions": {
+        "day1": "2025-03-25",
+        "day2": "2025-03-26",
+        "day3": "2025-03-27",
+        "day4": "2025-03-28",
+        "day5": "2025-03-29"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "china-open-2025",
+      "localeKey": "china-open"
+    },
+    {
+      "name": "新加坡公开赛",
+      "englishName": "Singapore Open",
+      "location": "新加坡",
+      "latitude": 1.3521,
+      "longitude": 103.8198,
+      "type": "open",
+      "category": "500",
+      "isMajor": false,
+      "startDate": "2025-04-01",
+      "endDate": "2025-04-06",
+      "sessions": {
+        "day1": "2025-04-01",
+        "day2": "2025-04-02",
+        "day3": "2025-04-03",
+        "day4": "2025-04-04",
+        "day5": "2025-04-05"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "singapore-open-2025",
+      "localeKey": "singapore-open"
+    },
+    {
+      "name": "马来西亚大师赛",
+      "englishName": "Malaysia Masters",
+      "location": "吉隆坡",
+      "latitude": 3.1390,
+      "longitude": 101.6869,
+      "type": "open",
+      "category": "500",
+      "isMajor": false,
+      "startDate": "2025-05-06",
+      "endDate": "2025-05-11",
+      "sessions": {
+        "day1": "2025-05-06",
+        "day2": "2025-05-07",
+        "day3": "2025-05-08",
+        "day4": "2025-05-09",
+        "day5": "2025-05-10"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "malaysia-masters-2025",
+      "localeKey": "malaysia-masters"
+    },
+    {
+      "name": "泰国公开赛",
+      "englishName": "Thailand Open",
+      "location": "曼谷",
+      "latitude": 13.7563,
+      "longitude": 100.5018,
+      "type": "open",
+      "category": "500",
+      "isMajor": false,
+      "startDate": "2025-05-13",
+      "endDate": "2025-05-18",
+      "sessions": {
+        "day1": "2025-05-13",
+        "day2": "2025-05-14",
+        "day3": "2025-05-15",
+        "day4": "2025-05-16",
+        "day5": "2025-05-17"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "thailand-open-2025",
+      "localeKey": "thailand-open"
+    },
+    {
+      "name": "印尼公开赛",
+      "englishName": "Indonesia Open",
+      "location": "雅加达",
+      "latitude": -6.2088,
+      "longitude": 106.8456,
+      "type": "open",
+      "category": "1000",
+      "isMajor": true,
+      "startDate": "2025-05-27",
+      "endDate": "2025-06-01",
+      "sessions": {
+        "day1": "2025-05-27",
+        "day2": "2025-05-28",
+        "day3": "2025-05-29",
+        "day4": "2025-05-30",
+        "day5": "2025-05-31"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "indonesia-open-2025",
+      "localeKey": "indonesia-open"
+    },
+    {
+      "name": "澳大利亚公开赛",
+      "englishName": "Australia Open",
+      "location": "悉尼",
+      "latitude": -33.8688,
+      "longitude": 151.2093,
+      "type": "open",
+      "category": "500",
+      "isMajor": false,
+      "startDate": "2025-06-10",
+      "endDate": "2025-06-15",
+      "sessions": {
+        "day1": "2025-06-10",
+        "day2": "2025-06-11",
+        "day3": "2025-06-12",
+        "day4": "2025-06-13",
+        "day5": "2025-06-14"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "australia-open-2025",
+      "localeKey": "australia-open"
+    },
+    {
+      "name": "日本公开赛",
+      "englishName": "Japan Open",
+      "location": "东京",
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "type": "open",
+      "category": "1000",
+      "isMajor": true,
+      "startDate": "2025-07-08",
+      "endDate": "2025-07-13",
+      "sessions": {
+        "day1": "2025-07-08",
+        "day2": "2025-07-09",
+        "day3": "2025-07-10",
+        "day4": "2025-07-11",
+        "day5": "2025-07-12"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "japan-open-2025",
+      "localeKey": "japan-open"
+    },
+    {
+      "name": "韩国公开赛",
+      "englishName": "Korea Open",
+      "location": "首尔",
+      "latitude": 37.5665,
+      "longitude": 126.9780,
+      "type": "open",
+      "category": "500",
+      "isMajor": false,
+      "startDate": "2025-07-15",
+      "endDate": "2025-07-20",
+      "sessions": {
+        "day1": "2025-07-15",
+        "day2": "2025-07-16",
+        "day3": "2025-07-17",
+        "day4": "2025-07-18",
+        "day5": "2025-07-19"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "korea-open-2025",
+      "localeKey": "korea-open"
+    },
+    {
+      "name": "中华台北公开赛",
+      "englishName": "Chinese Taipei Open",
+      "location": "台北",
+      "latitude": 25.0330,
+      "longitude": 121.5654,
+      "type": "open",
+      "category": "300",
+      "isMajor": false,
+      "startDate": "2025-07-22",
+      "endDate": "2025-07-27",
+      "sessions": {
+        "day1": "2025-07-22",
+        "day2": "2025-07-23",
+        "day3": "2025-07-24",
+        "day4": "2025-07-25",
+        "day5": "2025-07-26"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "chinese-taipei-open-2025",
+      "localeKey": "chinese-taipei-open"
+    },
+    {
+      "name": "中国大师赛",
+      "englishName": "China Masters",
+      "location": "常州",
+      "latitude": 31.8113,
+      "longitude": 119.9741,
+      "type": "open",
+      "category": "500",
+      "isMajor": false,
+      "startDate": "2025-07-29",
+      "endDate": "2025-08-03",
+      "sessions": {
+        "day1": "2025-07-29",
+        "day2": "2025-07-30",
+        "day3": "2025-07-31",
+        "day4": "2025-08-01",
+        "day5": "2025-08-02"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "china-masters-2025",
+      "localeKey": "china-masters"
+    },
+    {
+      "name": "世界锦标赛",
+      "englishName": "World Championships",
+      "location": "巴黎",
+      "latitude": 48.8566,
+      "longitude": 2.3522,
+      "type": "championship",
+      "isMajor": true,
+      "startDate": "2025-08-12",
+      "endDate": "2025-08-18",
+      "sessions": {
+        "day1": "2025-08-12",
+        "day2": "2025-08-13",
+        "day3": "2025-08-14",
+        "day4": "2025-08-15",
+        "day5": "2025-08-16",
+        "day6": "2025-08-17"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "world-championships-2025",
+      "localeKey": "world-championships"
+    },
+    {
+      "name": "香港公开赛",
+      "englishName": "Hong Kong Open",
+      "location": "香港",
+      "latitude": 22.3193,
+      "longitude": 114.1694,
+      "type": "open",
+      "category": "500",
+      "isMajor": false,
+      "startDate": "2025-09-09",
+      "endDate": "2025-09-14",
+      "sessions": {
+        "day1": "2025-09-09",
+        "day2": "2025-09-10",
+        "day3": "2025-09-11",
+        "day4": "2025-09-12",
+        "day5": "2025-09-13"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "hong-kong-open-2025",
+      "localeKey": "hong-kong-open"
+    },
+    {
+      "name": "越南公开赛",
+      "englishName": "Vietnam Open",
+      "location": "胡志明市",
+      "latitude": 10.8231,
+      "longitude": 106.6297,
+      "type": "open",
+      "category": "300",
+      "isMajor": false,
+      "startDate": "2025-09-16",
+      "endDate": "2025-09-21",
+      "sessions": {
+        "day1": "2025-09-16",
+        "day2": "2025-09-17",
+        "day3": "2025-09-18",
+        "day4": "2025-09-19",
+        "day5": "2025-09-20"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "vietnam-open-2025",
+      "localeKey": "vietnam-open"
+    },
+    {
+      "name": "北极公开赛",
+      "englishName": "Arctic Open",
+      "location": "万塔",
+      "latitude": 60.2910,
+      "longitude": 25.6654,
+      "type": "open",
+      "category": "500",
+      "isMajor": false,
+      "startDate": "2025-10-07",
+      "endDate": "2025-10-12",
+      "sessions": {
+        "day1": "2025-10-07",
+        "day2": "2025-10-08",
+        "day3": "2025-10-09",
+        "day4": "2025-10-10",
+        "day5": "2025-10-11"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "arctic-open-2025",
+      "localeKey": "arctic-open"
+    },
+    {
+      "name": "丹麦公开赛",
+      "englishName": "Denmark Open",
+      "location": "欧登塞",
+      "latitude": 55.3961,
+      "longitude": 10.3883,
+      "type": "open",
+      "category": "750",
+      "isMajor": false,
+      "startDate": "2025-10-14",
+      "endDate": "2025-10-19",
+      "sessions": {
+        "day1": "2025-10-14",
+        "day2": "2025-10-15",
+        "day3": "2025-10-16",
+        "day4": "2025-10-17",
+        "day5": "2025-10-18"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "denmark-open-2025",
+      "localeKey": "denmark-open"
+    },
+    {
+      "name": "法国公开赛",
+      "englishName": "French Open",
+      "location": "巴黎",
+      "latitude": 48.8566,
+      "longitude": 2.3522,
+      "type": "open",
+      "category": "750",
+      "isMajor": false,
+      "startDate": "2025-10-21",
+      "endDate": "2025-10-26",
+      "sessions": {
+        "day1": "2025-10-21",
+        "day2": "2025-10-22",
+        "day3": "2025-10-23",
+        "day4": "2025-10-24",
+        "day5": "2025-10-25"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "french-open-2025",
+      "localeKey": "french-open"
+    },
+    {
+      "name": "海洛公开赛",
+      "englishName": "Hylo Open",
+      "location": "萨尔布吕肯",
+      "latitude": 49.2326,
+      "longitude": 6.9937,
+      "type": "open",
+      "category": "300",
+      "isMajor": false,
+      "startDate": "2025-10-28",
+      "endDate": "2025-11-02",
+      "sessions": {
+        "day1": "2025-10-28",
+        "day2": "2025-10-29",
+        "day3": "2025-10-30",
+        "day4": "2025-10-31",
+        "day5": "2025-11-01"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "hylo-open-2025",
+      "localeKey": "hylo-open"
+    },
+    {
+      "name": "中国大师赛（福州）",
+      "englishName": "Fuzhou China Masters",
+      "location": "福州",
+      "latitude": 26.0745,
+      "longitude": 119.2965,
+      "type": "open",
+      "category": "500",
+      "isMajor": false,
+      "startDate": "2025-11-04",
+      "endDate": "2025-11-09",
+      "sessions": {
+        "day1": "2025-11-04",
+        "day2": "2025-11-05",
+        "day3": "2025-11-06",
+        "day4": "2025-11-07",
+        "day5": "2025-11-08"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "fuzhou-china-masters-2025",
+      "localeKey": "fuzhou-china-masters"
+    },
+    {
+      "name": "中国深圳大师赛",
+      "englishName": "Shenzhen China Masters",
+      "location": "深圳",
+      "latitude": 22.5431,
+      "longitude": 114.0579,
+      "type": "open",
+      "category": "750",
+      "isMajor": false,
+      "startDate": "2025-11-11",
+      "endDate": "2025-11-16",
+      "sessions": {
+        "day1": "2025-11-11",
+        "day2": "2025-11-12",
+        "day3": "2025-11-13",
+        "day4": "2025-11-14",
+        "day5": "2025-11-15"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "shenzhen-china-masters-2025",
+      "localeKey": "shenzhen-china-masters"
+    },
+    {
+      "name": "韩国大师赛",
+      "englishName": "Korea Masters",
+      "location": "益山",
+      "latitude": 35.9967,
+      "longitude": 126.8946,
+      "type": "open",
+      "category": "300",
+      "isMajor": false,
+      "startDate": "2025-11-18",
+      "endDate": "2025-11-23",
+      "sessions": {
+        "day1": "2025-11-18",
+        "day2": "2025-11-19",
+        "day3": "2025-11-20",
+        "day4": "2025-11-21",
+        "day5": "2025-11-22"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "final"
+      },
+      "slug": "korea-masters-2025",
+      "localeKey": "korea-masters"
+    },
+    {
+      "name": "世界羽联总决赛",
+      "englishName": "World Tour Finals",
+      "location": "杭州",
+      "latitude": 30.2741,
+      "longitude": 120.1551,
+      "type": "finals",
+      "isMajor": true,
+      "startDate": "2025-12-10",
+      "endDate": "2025-12-15",
+      "sessions": {
+        "day1": "2025-12-10",
+        "day2": "2025-12-11",
+        "day3": "2025-12-12",
+        "day4": "2025-12-13"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "semifinal",
+        "day4": "final"
+      },
+      "slug": "world-tour-finals-2025",
+      "localeKey": "world-tour-finals"
+    }
+  ]
+}

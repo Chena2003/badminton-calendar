@@ -1,0 +1,1327 @@
+{
+  "races": [
+    {
+      "name": "马来西亚羽毛球公开赛",
+      "englishName": "Malaysia Open",
+      "location": "吉隆坡",
+      "latitude": 3.139,
+      "longitude": 101.6869,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-01-06",
+      "endDate": "2026-01-11",
+      "sessions": {
+        "day1": "2026-01-06",
+        "day2": "2026-01-07",
+        "day3": "2026-01-08",
+        "day4": "2026-01-09",
+        "day5": "2026-01-10",
+        "day6": "2026-01-11"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "malaysia-open-2026",
+      "localeKey": "malaysia-open",
+      "category": "1000"
+    },
+    {
+      "name": "印度羽毛球公开赛",
+      "englishName": "India Open",
+      "location": "新德里",
+      "latitude": 28.6139,
+      "longitude": 77.209,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-01-13",
+      "endDate": "2026-01-18",
+      "sessions": {
+        "day1": "2026-01-13",
+        "day2": "2026-01-14",
+        "day3": "2026-01-15",
+        "day4": "2026-01-16",
+        "day5": "2026-01-17",
+        "day6": "2026-01-18"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "india-open-2026",
+      "localeKey": "india-open",
+      "category": "750"
+    },
+    {
+      "name": "印度尼西亚羽毛球大师赛",
+      "englishName": "Indonesia Masters",
+      "location": "雅加达",
+      "latitude": -6.2088,
+      "longitude": 106.8456,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-01-20",
+      "endDate": "2026-01-25",
+      "sessions": {
+        "day1": "2026-01-20",
+        "day2": "2026-01-21",
+        "day3": "2026-01-22",
+        "day4": "2026-01-23",
+        "day5": "2026-01-24",
+        "day6": "2026-01-25"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "indonesia-masters-jakarta-2026",
+      "localeKey": "indonesia-masters",
+      "category": "500"
+    },
+    {
+      "name": "泰国羽毛球大师赛",
+      "englishName": "Thailand Masters",
+      "location": "曼谷",
+      "latitude": 13.7563,
+      "longitude": 100.5018,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-01-27",
+      "endDate": "2026-02-01",
+      "sessions": {
+        "day1": "2026-01-27",
+        "day2": "2026-01-28",
+        "day3": "2026-01-29",
+        "day4": "2026-01-30",
+        "day5": "2026-01-31",
+        "day6": "2026-02-01"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "thailand-masters-2026",
+      "localeKey": "thailand-masters",
+      "category": "300"
+    },
+    {
+      "name": "德国羽毛球公开赛",
+      "englishName": "German Open",
+      "location": "鲁尔河畔米尔海姆",
+      "latitude": 51.1797,
+      "longitude": 6.8843,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-02-24",
+      "endDate": "2026-03-01",
+      "sessions": {
+        "day1": "2026-02-24",
+        "day2": "2026-02-25",
+        "day3": "2026-02-26",
+        "day4": "2026-02-27",
+        "day5": "2026-02-28",
+        "day6": "2026-03-01"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "german-open-2026",
+      "localeKey": "german-open",
+      "category": "300"
+    },
+    {
+      "name": "全英羽毛球公开赛",
+      "englishName": "All England Open",
+      "location": "伯明翰",
+      "latitude": 52.4862,
+      "longitude": -1.8904,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-03-03",
+      "endDate": "2026-03-08",
+      "sessions": {
+        "day1": "2026-03-03",
+        "day2": "2026-03-04",
+        "day3": "2026-03-05",
+        "day4": "2026-03-06",
+        "day5": "2026-03-07",
+        "day6": "2026-03-08"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "all-england-open-2026",
+      "localeKey": "all-england-open",
+      "category": "1000"
+    },
+    {
+      "name": "瑞士羽毛球公开赛",
+      "englishName": "Swiss Open",
+      "location": "巴塞尔",
+      "latitude": 47.5596,
+      "longitude": 7.5886,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-03-10",
+      "endDate": "2026-03-15",
+      "sessions": {
+        "day1": "2026-03-10",
+        "day2": "2026-03-11",
+        "day3": "2026-03-12",
+        "day4": "2026-03-13",
+        "day5": "2026-03-14",
+        "day6": "2026-03-15"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "swiss-open-2026",
+      "localeKey": "swiss-open",
+      "category": "300"
+    },
+    {
+      "name": "中国瑞昌羽毛球大师赛",
+      "englishName": "Ruichang China Masters",
+      "location": "瑞昌市",
+      "latitude": 29.6745,
+      "longitude": 115.666,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-03-10",
+      "endDate": "2026-03-15",
+      "sessions": {
+        "day1": "2026-03-10",
+        "day2": "2026-03-11",
+        "day3": "2026-03-12",
+        "day4": "2026-03-13",
+        "day5": "2026-03-14",
+        "day6": "2026-03-15"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "ruichang-china-masters-2026",
+      "localeKey": "ruichang-china-masters",
+      "category": "100"
+    },
+    {
+      "name": "奥尔良羽毛球大师赛",
+      "englishName": "Orleans Masters",
+      "location": "奥尔良",
+      "latitude": 47.9029,
+      "longitude": 1.9093,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-03-17",
+      "endDate": "2026-03-22",
+      "sessions": {
+        "day1": "2026-03-17",
+        "day2": "2026-03-18",
+        "day3": "2026-03-19",
+        "day4": "2026-03-20",
+        "day5": "2026-03-21",
+        "day6": "2026-03-22"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "orleans-masters-2026",
+      "localeKey": "orleans-masters",
+      "category": "300"
+    },
+    {
+      "name": "亚洲羽毛球锦标赛",
+      "englishName": "Asian Championships",
+      "location": "中国宁波",
+      "latitude": 29.8683,
+      "longitude": 121.544,
+      "type": "championship",
+      "isMajor": true,
+      "startDate": "2026-04-07",
+      "endDate": "2026-04-12",
+      "sessions": {
+        "day1": "2026-04-07",
+        "day2": "2026-04-08",
+        "day3": "2026-04-09",
+        "day4": "2026-04-10",
+        "day5": "2026-04-11",
+        "day6": "2026-04-12"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "asian-championships-2026",
+      "localeKey": "asian-championships"
+    },
+    {
+      "name": "欧洲羽毛球锦标赛",
+      "englishName": "European Championships",
+      "location": "西班牙韦尔瓦",
+      "latitude": 37.2614,
+      "longitude": -6.9447,
+      "type": "championship",
+      "isMajor": true,
+      "startDate": "2026-04-07",
+      "endDate": "2026-04-12",
+      "sessions": {
+        "day1": "2026-04-07",
+        "day2": "2026-04-08",
+        "day3": "2026-04-09",
+        "day4": "2026-04-10",
+        "day5": "2026-04-11",
+        "day6": "2026-04-12"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "european-championships-2026",
+      "localeKey": "european-championships"
+    },
+    {
+      "name": "汤姆斯杯&尤伯杯",
+      "englishName": "Thomas & Uber Cup",
+      "location": "丹麦霍森斯",
+      "latitude": 55.8714,
+      "longitude": 9.85,
+      "type": "championship",
+      "isMajor": true,
+      "startDate": "2026-04-24",
+      "endDate": "2026-05-03",
+      "sessions": {
+        "day1": "2026-04-24",
+        "day2": "2026-04-25",
+        "day3": "2026-04-26",
+        "day4": "2026-04-27",
+        "day5": "2026-04-28",
+        "day6": "2026-04-29",
+        "day7": "2026-04-30",
+        "day8": "2026-05-01",
+        "day9": "2026-05-02",
+        "day10": "2026-05-03"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "group",
+        "day5": "group",
+        "day6": "group",
+        "day7": "group",
+        "day8": "semifinal",
+        "day9": "semifinal",
+        "day10": "final"
+      },
+      "slug": "thomas-and-uber-cup-2026",
+      "localeKey": "thomas-and-uber-cup"
+    },
+    {
+      "name": "泰国羽毛球公开赛",
+      "englishName": "Thailand Open",
+      "location": "曼谷",
+      "latitude": 13.7563,
+      "longitude": 100.5018,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-05-12",
+      "endDate": "2026-05-17",
+      "sessions": {
+        "day1": "2026-05-12",
+        "day2": "2026-05-13",
+        "day3": "2026-05-14",
+        "day4": "2026-05-15",
+        "day5": "2026-05-16",
+        "day6": "2026-05-17"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "thailand-open-2026",
+      "localeKey": "thailand-open",
+      "category": "500"
+    },
+    {
+      "name": "中国瑞昌羽毛球大师赛",
+      "englishName": "Ruichang China Masters",
+      "location": "瑞昌市",
+      "latitude": 29.6745,
+      "longitude": 115.666,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-05-12",
+      "endDate": "2026-05-17",
+      "sessions": {
+        "day1": "2026-05-12",
+        "day2": "2026-05-13",
+        "day3": "2026-05-14",
+        "day4": "2026-05-15",
+        "day5": "2026-05-16",
+        "day6": "2026-05-17"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "ruichang-china-masters-may-2026",
+      "localeKey": "ruichang-china-masters",
+      "category": "100"
+    },
+    {
+      "name": "马来西亚羽毛球大师赛",
+      "englishName": "Malaysia Masters",
+      "location": "吉隆坡",
+      "latitude": 3.139,
+      "longitude": 101.6869,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-05-19",
+      "endDate": "2026-05-24",
+      "sessions": {
+        "day1": "2026-05-19",
+        "day2": "2026-05-20",
+        "day3": "2026-05-21",
+        "day4": "2026-05-22",
+        "day5": "2026-05-23",
+        "day6": "2026-05-24"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "malaysia-masters-may-2026",
+      "localeKey": "malaysia-masters",
+      "category": "500"
+    },
+    {
+      "name": "新加坡羽毛球公开赛",
+      "englishName": "Singapore Open",
+      "location": "新加坡",
+      "latitude": 1.3521,
+      "longitude": 103.8198,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-05-26",
+      "endDate": "2026-05-31",
+      "sessions": {
+        "day1": "2026-05-26",
+        "day2": "2026-05-27",
+        "day3": "2026-05-28",
+        "day4": "2026-05-29",
+        "day5": "2026-05-30",
+        "day6": "2026-05-31"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "singapore-open-2026",
+      "localeKey": "singapore-open",
+      "category": "750"
+    },
+    {
+      "name": "印度尼西亚羽毛球公开赛",
+      "englishName": "Indonesia Open",
+      "location": "雅加达",
+      "latitude": -6.2088,
+      "longitude": 106.8456,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-06-02",
+      "endDate": "2026-06-07",
+      "sessions": {
+        "day1": "2026-06-02",
+        "day2": "2026-06-03",
+        "day3": "2026-06-04",
+        "day4": "2026-06-05",
+        "day5": "2026-06-06",
+        "day6": "2026-06-07"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "indonesia-open-2026",
+      "localeKey": "indonesia-open",
+      "category": "1000"
+    },
+    {
+      "name": "澳大利亚羽毛球公开赛",
+      "englishName": "Australia Open",
+      "location": "悉尼",
+      "latitude": -33.8688,
+      "longitude": 151.2093,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-06-09",
+      "endDate": "2026-06-14",
+      "sessions": {
+        "day1": "2026-06-09",
+        "day2": "2026-06-10",
+        "day3": "2026-06-11",
+        "day4": "2026-06-12",
+        "day5": "2026-06-13",
+        "day6": "2026-06-14"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "australia-open-2026",
+      "localeKey": "australia-open",
+      "category": "500"
+    },
+    {
+      "name": "澳门羽毛球公开赛",
+      "englishName": "Macau Open",
+      "location": "澳门",
+      "latitude": 22.1987,
+      "longitude": 113.5439,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-06-16",
+      "endDate": "2026-06-21",
+      "sessions": {
+        "day1": "2026-06-16",
+        "day2": "2026-06-17",
+        "day3": "2026-06-18",
+        "day4": "2026-06-19",
+        "day5": "2026-06-20",
+        "day6": "2026-06-21"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "macau-open-2026",
+      "localeKey": "macau-open",
+      "category": "300"
+    },
+    {
+      "name": "美国羽毛球公开赛",
+      "englishName": "US Open",
+      "location": "康瑟尔布拉夫斯",
+      "latitude": 41.2619,
+      "longitude": -95.8608,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-06-23",
+      "endDate": "2026-06-28",
+      "sessions": {
+        "day1": "2026-06-23",
+        "day2": "2026-06-24",
+        "day3": "2026-06-25",
+        "day4": "2026-06-26",
+        "day5": "2026-06-27",
+        "day6": "2026-06-28"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "us-open-2026",
+      "localeKey": "us-open",
+      "category": "300"
+    },
+    {
+      "name": "加拿大羽毛球公开赛",
+      "englishName": "Canada Open",
+      "location": "万锦",
+      "latitude": 43.8561,
+      "longitude": -79.337,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-06-30",
+      "endDate": "2026-07-05",
+      "sessions": {
+        "day1": "2026-06-30",
+        "day2": "2026-07-01",
+        "day3": "2026-07-02",
+        "day4": "2026-07-03",
+        "day5": "2026-07-04",
+        "day6": "2026-07-05"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "canada-open-2026",
+      "localeKey": "canada-open",
+      "category": "300"
+    },
+    {
+      "name": "日本羽毛球公开赛",
+      "englishName": "Japan Open",
+      "location": "东京",
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-07-14",
+      "endDate": "2026-07-19",
+      "sessions": {
+        "day1": "2026-07-14",
+        "day2": "2026-07-15",
+        "day3": "2026-07-16",
+        "day4": "2026-07-17",
+        "day5": "2026-07-18",
+        "day6": "2026-07-19"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "japan-open-2026",
+      "localeKey": "japan-open",
+      "category": "750"
+    },
+    {
+      "name": "中国羽毛球公开赛",
+      "englishName": "China Open",
+      "location": "常州",
+      "latitude": 31.8113,
+      "longitude": 119.9741,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-07-21",
+      "endDate": "2026-07-26",
+      "sessions": {
+        "day1": "2026-07-21",
+        "day2": "2026-07-22",
+        "day3": "2026-07-23",
+        "day4": "2026-07-24",
+        "day5": "2026-07-25",
+        "day6": "2026-07-26"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "china-open-2026",
+      "localeKey": "china-open",
+      "category": "1000"
+    },
+    {
+      "name": "台北羽毛球公开赛",
+      "englishName": "Chinese Taipei Open",
+      "location": "台北市",
+      "latitude": 25.033,
+      "longitude": 121.5654,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-07-28",
+      "endDate": "2026-08-02",
+      "sessions": {
+        "day1": "2026-07-28",
+        "day2": "2026-07-29",
+        "day3": "2026-07-30",
+        "day4": "2026-07-31",
+        "day5": "2026-08-01",
+        "day6": "2026-08-02"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "chinese-taipei-open-2026",
+      "localeKey": "chinese-taipei-open",
+      "category": "300"
+    },
+    {
+      "name": "世界羽毛球锦标赛",
+      "englishName": "World Championships",
+      "location": "印度新德里",
+      "latitude": 28.6139,
+      "longitude": 77.209,
+      "type": "championship",
+      "isMajor": true,
+      "startDate": "2026-08-17",
+      "endDate": "2026-08-23",
+      "sessions": {
+        "day1": "2026-08-17",
+        "day2": "2026-08-18",
+        "day3": "2026-08-19",
+        "day4": "2026-08-20",
+        "day5": "2026-08-21",
+        "day6": "2026-08-22",
+        "day7": "2026-08-23"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "group",
+        "day5": "semifinal",
+        "day6": "semifinal",
+        "day7": "final"
+      },
+      "slug": "world-championships-2026",
+      "localeKey": "world-championships"
+    },
+    {
+      "name": "中国羽毛球大师赛",
+      "englishName": "China Masters",
+      "location": "深圳",
+      "latitude": 22.5431,
+      "longitude": 114.0579,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-09-01",
+      "endDate": "2026-09-07",
+      "sessions": {
+        "day1": "2026-09-01",
+        "day2": "2026-09-02",
+        "day3": "2026-09-03",
+        "day4": "2026-09-04",
+        "day5": "2026-09-05",
+        "day6": "2026-09-06",
+        "day7": "2026-09-07"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "group",
+        "day5": "semifinal",
+        "day6": "semifinal",
+        "day7": "final"
+      },
+      "slug": "china-masters-2026",
+      "localeKey": "china-masters",
+      "category": "750"
+    },
+    {
+      "name": "越南羽毛球公开赛",
+      "englishName": "Vietnam Open",
+      "location": "胡志明市",
+      "latitude": 10.8231,
+      "longitude": 106.6297,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-09-08",
+      "endDate": "2026-09-13",
+      "sessions": {
+        "day1": "2026-09-08",
+        "day2": "2026-09-09",
+        "day3": "2026-09-10",
+        "day4": "2026-09-11",
+        "day5": "2026-09-12",
+        "day6": "2026-09-13"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "vietnam-open-2026",
+      "localeKey": "vietnam-open",
+      "category": "100"
+    },
+    {
+      "name": "韩国羽毛球公开赛",
+      "englishName": "Korea Open",
+      "location": "水原市",
+      "latitude": 37.2636,
+      "longitude": 127.0286,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-09-08",
+      "endDate": "2026-09-13",
+      "sessions": {
+        "day1": "2026-09-08",
+        "day2": "2026-09-09",
+        "day3": "2026-09-10",
+        "day4": "2026-09-11",
+        "day5": "2026-09-12",
+        "day6": "2026-09-13"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "korea-open-2026",
+      "localeKey": "korea-open",
+      "category": "500"
+    },
+    {
+      "name": "印度尼西亚羽毛球大师赛",
+      "englishName": "Indonesia Masters",
+      "location": "北干巴鲁",
+      "latitude": 0.5071,
+      "longitude": 101.4478,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-09-15",
+      "endDate": "2026-09-20",
+      "sessions": {
+        "day1": "2026-09-15",
+        "day2": "2026-09-16",
+        "day3": "2026-09-17",
+        "day4": "2026-09-18",
+        "day5": "2026-09-19",
+        "day6": "2026-09-20"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "indonesia-masters-pekanbaru-2026",
+      "localeKey": "indonesia-masters",
+      "category": "100"
+    },
+    {
+      "name": "阿布扎比羽毛球大师赛",
+      "englishName": "Abu Dhabi Masters",
+      "location": "迪拜",
+      "latitude": 25.2048,
+      "longitude": 55.2708,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-09-29",
+      "endDate": "2026-10-04",
+      "sessions": {
+        "day1": "2026-09-29",
+        "day2": "2026-09-30",
+        "day3": "2026-10-01",
+        "day4": "2026-10-02",
+        "day5": "2026-10-03",
+        "day6": "2026-10-04"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "abu-dhabi-masters-2026",
+      "localeKey": "abu-dhabi-masters",
+      "category": "100"
+    },
+    {
+      "name": "北极羽毛球公开赛",
+      "englishName": "Arctic Open",
+      "location": "万塔",
+      "latitude": 60.291,
+      "longitude": 25.6654,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-11",
+      "sessions": {
+        "day1": "2026-10-06",
+        "day2": "2026-10-07",
+        "day3": "2026-10-08",
+        "day4": "2026-10-09",
+        "day5": "2026-10-10",
+        "day6": "2026-10-11"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "arctic-open-2026",
+      "localeKey": "arctic-open",
+      "category": "500"
+    },
+    {
+      "name": "丹麦羽毛球公开赛",
+      "englishName": "Denmark Open",
+      "location": "欧登塞",
+      "latitude": 55.3961,
+      "longitude": 10.3883,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-10-13",
+      "endDate": "2026-10-18",
+      "sessions": {
+        "day1": "2026-10-13",
+        "day2": "2026-10-14",
+        "day3": "2026-10-15",
+        "day4": "2026-10-16",
+        "day5": "2026-10-17",
+        "day6": "2026-10-18"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "denmark-open-2026",
+      "localeKey": "denmark-open",
+      "category": "750"
+    },
+    {
+      "name": "马来西亚羽毛球大师赛",
+      "englishName": "Malaysia Masters",
+      "location": "吉隆坡",
+      "latitude": 3.139,
+      "longitude": 101.6869,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-10-13",
+      "endDate": "2026-10-18",
+      "sessions": {
+        "day1": "2026-10-13",
+        "day2": "2026-10-14",
+        "day3": "2026-10-15",
+        "day4": "2026-10-16",
+        "day5": "2026-10-17",
+        "day6": "2026-10-18"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "malaysia-masters-october-2026",
+      "localeKey": "malaysia-masters",
+      "category": "100"
+    },
+    {
+      "name": "法国羽毛球公开赛",
+      "englishName": "French Open",
+      "location": "巴黎",
+      "latitude": 48.8566,
+      "longitude": 2.3522,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-10-20",
+      "endDate": "2026-10-25",
+      "sessions": {
+        "day1": "2026-10-20",
+        "day2": "2026-10-21",
+        "day3": "2026-10-22",
+        "day4": "2026-10-23",
+        "day5": "2026-10-24",
+        "day6": "2026-10-25"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "french-open-2026",
+      "localeKey": "french-open",
+      "category": "750"
+    },
+    {
+      "name": "印度尼西亚羽毛球大师赛",
+      "englishName": "Indonesia Masters",
+      "location": "棉兰",
+      "latitude": 3.5952,
+      "longitude": 98.6722,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-10-20",
+      "endDate": "2026-10-25",
+      "sessions": {
+        "day1": "2026-10-20",
+        "day2": "2026-10-21",
+        "day3": "2026-10-22",
+        "day4": "2026-10-23",
+        "day5": "2026-10-24",
+        "day6": "2026-10-25"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "indonesia-masters-medan-2026",
+      "localeKey": "indonesia-masters",
+      "category": "100"
+    },
+    {
+      "name": "海洛羽毛球公开赛",
+      "englishName": "Hylo Open",
+      "location": "萨尔布吕肯",
+      "latitude": 49.2326,
+      "longitude": 6.9937,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-10-27",
+      "endDate": "2026-11-01",
+      "sessions": {
+        "day1": "2026-10-27",
+        "day2": "2026-10-28",
+        "day3": "2026-10-29",
+        "day4": "2026-10-30",
+        "day5": "2026-10-31",
+        "day6": "2026-11-01"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "hylo-open-2026",
+      "localeKey": "hylo-open",
+      "category": "500"
+    },
+    {
+      "name": "韩国羽毛球大师赛",
+      "englishName": "Korea Masters",
+      "location": "益山市",
+      "latitude": 0,
+      "longitude": 0,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-11-03",
+      "endDate": "2026-11-08",
+      "sessions": {
+        "day1": "2026-11-03",
+        "day2": "2026-11-04",
+        "day3": "2026-11-05",
+        "day4": "2026-11-06",
+        "day5": "2026-11-07",
+        "day6": "2026-11-08"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "korea-masters-2026",
+      "localeKey": "korea-masters",
+      "category": "300"
+    },
+    {
+      "name": "日本熊本羽毛球大师赛",
+      "englishName": "Kumamoto Japan Masters",
+      "location": "熊本市",
+      "latitude": 32.8031,
+      "longitude": 130.7079,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-15",
+      "sessions": {
+        "day1": "2026-11-10",
+        "day2": "2026-11-11",
+        "day3": "2026-11-12",
+        "day4": "2026-11-13",
+        "day5": "2026-11-14",
+        "day6": "2026-11-15"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "kumamoto-japan-masters-2026",
+      "localeKey": "kumamoto-japan-masters",
+      "category": "500"
+    },
+    {
+      "name": "高雄羽毛球大师赛",
+      "englishName": "Kaohsiung Masters",
+      "location": "高雄市",
+      "latitude": 22.6273,
+      "longitude": 120.3014,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-15",
+      "sessions": {
+        "day1": "2026-11-10",
+        "day2": "2026-11-11",
+        "day3": "2026-11-12",
+        "day4": "2026-11-13",
+        "day5": "2026-11-14",
+        "day6": "2026-11-15"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "kaohsiung-masters-2026",
+      "localeKey": "kaohsiung-masters",
+      "category": "100"
+    },
+    {
+      "name": "香港羽毛球公开赛",
+      "englishName": "Hong Kong Open",
+      "location": "香港",
+      "latitude": 22.3193,
+      "longitude": 114.1694,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-11-17",
+      "endDate": "2026-11-22",
+      "sessions": {
+        "day1": "2026-11-17",
+        "day2": "2026-11-18",
+        "day3": "2026-11-19",
+        "day4": "2026-11-20",
+        "day5": "2026-11-21",
+        "day6": "2026-11-22"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "hong-kong-open-2026",
+      "localeKey": "hong-kong-open",
+      "category": "500"
+    },
+    {
+      "name": "赛义德·莫迪羽毛球国际赛",
+      "englishName": "Syed Modi International",
+      "location": "勒克瑙",
+      "latitude": 26.8467,
+      "longitude": 80.9462,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-11-24",
+      "endDate": "2026-11-29",
+      "sessions": {
+        "day1": "2026-11-24",
+        "day2": "2026-11-25",
+        "day3": "2026-11-26",
+        "day4": "2026-11-27",
+        "day5": "2026-11-28",
+        "day6": "2026-11-29"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "syed-modi-international-2026",
+      "localeKey": "syed-modi-international",
+      "category": "300"
+    },
+    {
+      "name": "古瓦哈蒂羽毛球大师赛",
+      "englishName": "Guwahati Masters",
+      "location": "古瓦哈蒂",
+      "latitude": 26.1445,
+      "longitude": 91.7362,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-12-01",
+      "endDate": "2026-12-06",
+      "sessions": {
+        "day1": "2026-12-01",
+        "day2": "2026-12-02",
+        "day3": "2026-12-03",
+        "day4": "2026-12-04",
+        "day5": "2026-12-05",
+        "day6": "2026-12-06"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "guwahati-masters-2026",
+      "localeKey": "guwahati-masters",
+      "category": "100"
+    },
+    {
+      "name": "奥迪沙羽毛球大师赛",
+      "englishName": "Odisha Masters",
+      "location": "奥里萨",
+      "latitude": 20.9517,
+      "longitude": 85.0985,
+      "type": "open",
+      "isMajor": true,
+      "startDate": "2026-12-08",
+      "endDate": "2026-12-13",
+      "sessions": {
+        "day1": "2026-12-08",
+        "day2": "2026-12-09",
+        "day3": "2026-12-10",
+        "day4": "2026-12-11",
+        "day5": "2026-12-12",
+        "day6": "2026-12-13"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "group",
+        "day4": "semifinal",
+        "day5": "semifinal",
+        "day6": "final"
+      },
+      "slug": "odisha-masters-2026",
+      "localeKey": "odisha-masters",
+      "category": "100"
+    },
+    {
+      "name": "世界羽联世界巡回赛总决赛",
+      "englishName": "World Tour Finals",
+      "location": "杭州",
+      "latitude": 30.2741,
+      "longitude": 120.1551,
+      "type": "finals",
+      "isMajor": true,
+      "startDate": "2026-12-09",
+      "endDate": "2026-12-13",
+      "sessions": {
+        "day1": "2026-12-09",
+        "day2": "2026-12-10",
+        "day3": "2026-12-11",
+        "day4": "2026-12-12"
+      },
+      "sessionTypes": {
+        "day1": "group",
+        "day2": "group",
+        "day3": "semifinal",
+        "day4": "final"
+      },
+      "slug": "world-tour-finals-2026",
+      "localeKey": "world-tour-finals"
+    }
+  ]
+}

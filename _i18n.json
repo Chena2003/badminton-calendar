@@ -1,0 +1,11 @@
+{
+  "locales": ["zh"],
+  "languageNames": {
+    "zh": "中文"
+  },
+  "defaultLocale": "zh",
+  "loadLocaleFrom": "locales",
+  "pages": {
+    "*": ["localization"]
+  }
+}
