@@ -46,6 +46,13 @@ const RaceTR: FunctionComponent<RaceRowTR> = ({
 
   let { timezone, timeFormat } = useUserContext();
 
+  // 根据语言环境选择日期格式
+  const isChineseLocale = locale === 'zh' || locale === 'zh-HK';
+  const dateFormat = isChineseLocale ? 'M月D日' : 'D MMM';
+  const dateTimeFormat = isChineseLocale
+    ? (timeFormat == 12 ? 'M月D日 h:mm A' : 'M月D日 HH:mm')
+    : (timeFormat == 12 ? 'D MMM h:mm A' : 'D MMM HH:mm');
+
   if (hasMultipleFeaturedEvents) {
     var blankColumnCount = config.featuredSessions.length - 1;
 
@@ -59,7 +66,7 @@ const RaceTR: FunctionComponent<RaceRowTR> = ({
           <div className="pr-2 md:pr-4">
             {dayjs(date)
               .tz(timezone)
-              .format(timeFormat == 12 ? 'D MMM h:mm A' : 'D MMM HH:mm')}
+              .format(dateTimeFormat)}
           </div>
         </td>
       </tr>
@@ -77,7 +84,7 @@ const RaceTR: FunctionComponent<RaceRowTR> = ({
           className="text-right md:text-left"
           headers={`date_header ${slug}-header`}
         >
-          {dayjs(date).tz(timezone).format('D MMM')}
+          {dayjs(date).tz(timezone).format(dateFormat)}
         </td>
         <td className="" headers={`time_header ${slug}-header`}>
           <div className={`text-right md:text-left pr-2 md:pr-0`}>

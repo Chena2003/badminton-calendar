@@ -3,9 +3,9 @@
 import dayjs from 'dayjs';
 import dayjstimezone from 'dayjs/plugin/timezone';
 import dayjsutc from 'dayjs/plugin/utc';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { usePlausible } from 'next-plausible';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useUserContext } from '../../components/UserContext';
 import RaceModel from '../../models/RaceModel';
 import CanceledBadge from '../Badges/CanceledBadge';
@@ -13,6 +13,9 @@ import NextBadge from '../Badges/NextBadge';
 import TBCBadge from '../Badges/TBCBadge';
 import RaceTR from '../Race/RaceTR';
 import Toggle from '../Toggle/Toggle';
+
+dayjs.extend(dayjsutc);
+dayjs.extend(dayjstimezone);
 
 export interface RaceRow {
   isNextRace: boolean;
@@ -29,24 +32,20 @@ const Race = ({
   item,
   index,
   shouldCollapsePastRaces,
-  hasOccured,
   isNextRace,
   config,
   currentTime,
 }: RaceRow) => {
   const t = useTranslations('All');
   const plausible = usePlausible();
+  const locale = useLocale();
 
-  let { timezone, timeFormat, collapsePastRaces, updateCollapsePastRaces } =
-    useUserContext();
+  let { timezone, timeFormat } = useUserContext();
   const [collapsed, setCollapsed] = useState<Boolean>(!isNextRace);
 
-  dayjs.extend(dayjsutc);
-  dayjs.extend(dayjstimezone);
-
-  useEffect(() => {
-    setCollapsed(!isNextRace);
-  }, []);
+  // 根据语言环境选择日期格式
+  const isChineseLocale = locale === 'zh' || locale === 'zh-HK';
+  const dateFormat = isChineseLocale ? 'M月D日' : 'D MMM';
 
   const handleRowClick = (event: React.MouseEvent<HTMLTableRowElement>) => {
     plausible(!collapsed ? 'Closed Event' : 'Opened Event', {
@@ -134,7 +133,7 @@ const Race = ({
                   item.sessions[config.featuredSessions[0]] &&
                   dayjs(item.sessions[config.featuredSessions[0]])
                     .tz(timezone)
-                    .format('D MMM')}
+                    .format(dateFormat)}
               </span>
             </td>
             <td
@@ -160,20 +159,20 @@ const Race = ({
                 {item.sessions &&
                 dayjs(item.sessions[firstEventSessionKey])
                   .tz(timezone)
-                  .format('D MMM') !=
+                  .format(dateFormat) !=
                   dayjs(item.sessions[lastEventSessionKey])
                     .tz(timezone)
-                    .format('D MMM')
+                    .format(dateFormat)
                   ? `${dayjs(item.sessions[firstEventSessionKey])
                       .tz(timezone)
-                      .format('D MMM')} - ${dayjs(
+                      .format(dateFormat)} - ${dayjs(
                       item.sessions[lastEventSessionKey],
                     )
                       .tz(timezone)
-                      .format('D MMM')}`
+                      .format(dateFormat)}`
                   : `${dayjs(item.sessions[lastEventSessionKey])
                       .tz(timezone)
-                      .format('D MMM')}`}
+                      .format(dateFormat)}`}
               </span>
             </div>
           </td>
@@ -242,10 +241,7 @@ const Race = ({
   }
 
   function rowClasses(props: RaceRow) {
-    var classes = '';
-    if (props.index % 2 === 1) {
-      classes += 'rounded bg-row ';
-    }
+    var classes = 'rounded bg-row ';
 
     // Fade out TBC races a little
     if (props.item.tbc) {
