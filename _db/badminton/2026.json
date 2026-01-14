@@ -213,7 +213,7 @@
     {
       "name": "中国瑞昌羽毛球大师赛",
       "englishName": "Ruichang China Masters",
-      "location": "瑞昌市",
+      "location": "瑞昌",
       "latitude": 29.6745,
       "longitude": 115.666,
       "type": "open",
@@ -273,7 +273,7 @@
     {
       "name": "亚洲羽毛球锦标赛",
       "englishName": "Asian Championships",
-      "location": "中国宁波",
+      "location": "宁波",
       "latitude": 29.8683,
       "longitude": 121.544,
       "type": "championship",
@@ -398,7 +398,7 @@
     {
       "name": "中国瑞昌羽毛球大师赛",
       "englishName": "Ruichang China Masters",
-      "location": "瑞昌市",
+      "location": "瑞昌",
       "latitude": 29.6745,
       "longitude": 115.666,
       "type": "open",
