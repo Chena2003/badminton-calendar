@@ -94,7 +94,7 @@ export default function BadmintonForm() {
                       onChange={(e) =>
                         setForm({ ...form, minCategory: e.target.value })
                       }
-                      className="w-full p-2 border border-gray-700 rounded bg-gray-900 text-white focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full p-2 border border-themed rounded bg-input text-primary focus:ring-2 focus:ring-green-500 focus:border-green-500"
                     >
                       <option value="1000">1000分（超级1000赛）</option>
                       <option value="750">750分（超级750赛）</option>
@@ -215,7 +215,7 @@ export default function BadmintonForm() {
                 />
                 <span>
                   只显示重点比赛
-                  <small className="block text-gray-500">
+                  <small className="block text-muted">
                     {t('form.onlyMajorHint')}
                   </small>
                 </span>
@@ -242,7 +242,7 @@ export default function BadmintonForm() {
                     setForm({ ...form, alarmMinutes: parseInt(e.target.value) })
                   }
                   disabled={form.alarmMinutes === 0}
-                  className="ml-2 p-2 border border-gray-700 rounded bg-gray-900 text-white focus:ring-2 focus:ring-green-500 focus:border-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="ml-2 p-2 border border-themed rounded bg-input text-primary focus:ring-2 focus:ring-green-500 focus:border-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <option value="30">30分钟</option>
                   <option value="60">60分钟</option>

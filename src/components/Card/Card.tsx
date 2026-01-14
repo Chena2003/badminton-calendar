@@ -5,7 +5,7 @@ interface Props {
 }
 
 const Card: FunctionComponent<Props> = ({ children }: Props) => {
-	return <div className="bg-row-gray rounded-md p-6 mb-10">{children}</div>;
+	return <div className="bg-card rounded-md p-6 mb-10">{children}</div>;
 }
 
 export default Card;
