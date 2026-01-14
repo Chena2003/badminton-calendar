@@ -80,23 +80,22 @@ export async function GET(request: NextRequest) {
         }
 
         const startDate = dayjs(dateStr as string);
-        const endDate = startDate.add(1, 'day');
 
         events.push({
           start: [
             startDate.year(),
             startDate.month() + 1,
             startDate.date(),
-            0,
+            9,
             0,
           ] as [number, number, number, number, number],
-          end: [endDate.year(), endDate.month() + 1, endDate.date(), 0, 0] as [
-            number,
-            number,
-            number,
-            number,
-            number,
-          ],
+          end: [
+            startDate.year(),
+            startDate.month() + 1,
+            startDate.date(),
+            21,
+            0,
+          ] as [number, number, number, number, number],
           title: `羽毛球: ${sessionName} (${raceName})`,
           description: `赛事：${raceName}\n地点：${race.location}`,
           location: race.location,
