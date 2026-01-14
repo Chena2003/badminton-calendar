@@ -12,10 +12,10 @@ export interface Props {
   races: [RaceModel];
   locale?: string;
   config: any;
-  currentTime: Date;
 }
 
-const Races = ({ year, races, config, currentTime }: Props) => {
+const Races = ({ year, races, config }: Props) => {
+  const currentTime = new Date();
   const t = useTranslations('All');
   const title = t(`${process.env.NEXT_PUBLIC_SITE_KEY}.title`);
 

@@ -26,8 +26,6 @@ export default async function Page({
     `/_db/${process.env.NEXT_PUBLIC_SITE_KEY}/config.json`,
   );
 
-  const currentTime = new Date();
-
   return (
     <>
       <Layout showCTABar={true} year={currentYear} config={config}>
