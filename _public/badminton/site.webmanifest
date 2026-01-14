@@ -1,6 +1,6 @@
 {
-  "name": "F1 Calendar",
-  "short_name": "F1 Calendar",
+  "name": "Badminton Calendar",
+  "short_name": "Badminton",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -17,9 +17,14 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
     }
   ],
-  "theme_color": "#03120f",
+  "theme_color": "#00A651",
   "background_color": "#000000",
   "start_url": "/",
   "display": "standalone"

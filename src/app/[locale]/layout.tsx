@@ -119,7 +119,7 @@ export default async function RootLayout({ children, params }) {
     <PlausibleProvider>
       <UserContextProvider>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <html lang={locale} className={leagueSpartan.className}>
+          <html lang={locale} className={leagueSpartan.className} suppressHydrationWarning>
             <head>
               <PlausibleProvider
                 domain={process.env.NEXT_PUBLIC_PLAUSIBLE_KEY}
