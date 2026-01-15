@@ -1,219 +1,191 @@
-# 羽毛球日历生成器
+# 羽毛球赛程日历 | Badminton Calendar
 
-这是一个基于 Next.js 的羽毛球比赛日历生成器，支持自定义筛选和动态生成日历。
+一个基于 Next.js 15 的羽毛球赛事日历生成器，支持多语言、自定义筛选和日历导出功能。
 
-## 功能特性
+A Next.js 15 badminton tournament calendar generator with multi-language support, custom filtering, and calendar export capabilities.
 
-- 📅 动态生成羽毛球比赛日历
-- 🎯 自定义筛选：按赛事类型、等级、比赛日类型
-- ⚠️ 比赛前闹钟提醒
-- 🌐 多语言支持（目前支持中文）
-- 📱 支持多种日历格式（WebCal、Google Calendar、ICS文件）
+![Badminton Calendar](public/logo.png)
 
-## 赛事类型
+## ✨ 特性 | Features
 
-- **公开赛**：1000分、750分、500分、300分、100分
-- **锦标赛**：世界锦标赛、洲际锦标赛等
-- **总决赛**：世界羽联总决赛
-- **奥运会**：羽毛球比赛
-- **亚运会**：羽毛球比赛
+- 🗓️ **动态日历生成** - 根据用户偏好生成自定义 ICS 日历文件
+- 🌍 **多语言支持** - 支持简体中文、繁体中文（香港）
+- 🎯 **灵活筛选** - 按赛事类型、级别、阶段筛选比赛
+- ⏰ **时区支持** - 自动检测用户时区，支持手动切换
+- 🔔 **赛前提醒** - 可设置比赛前 30/60/90/120 分钟提醒
+- 🌓 **深色模式** - 支持浅色/深色主题切换
+- 📱 **PWA 支持** - 可安装为桌面/移动应用
+- 🎨 **Yonex 品牌配色** - 采用 Yonex 绿色主题
 
-## 比赛日类型
+## 🛠️ 技术栈 | Tech Stack
 
-- 小组赛
-- 半决赛
-- 决赛
+- **框架**: Next.js 15 (App Router)
+- **语言**: TypeScript
+- **样式**: Tailwind CSS
+- **国际化**: next-intl
+- **日期处理**: dayjs
+- **日历格式**: ics (iCalendar)
+- **分析**: Plausible Analytics
 
-## 快速开始
-
-### 1. 安装依赖
+## 📦 安装 | Installation
 
 ```bash
+# 克隆仓库
+git clone https://github.com/yourusername/badminton-calendar.git
+cd badminton-calendar
+
+# 安装依赖
 npm install
+
+# 复制公共资源
+npm run setPublicAssets
+
+# 创建环境变量文件
+cp .env.example .env.local
 ```
 
-### 2. 配置环境变量
+## ⚙️ 环境变量 | Environment Variables
 
-创建 `.env.local` 文件：
+在 `.env.local` 中配置以下变量：
 
 ```env
 NEXT_PUBLIC_SITE_KEY=badminton
 NEXT_PUBLIC_CURRENT_YEAR=2025
 ```
 
-### 3. 启动开发服务器
+## 🚀 开发 | Development
 
 ```bash
+# 启动开发服务器
 npm run dev
-```
 
-访问 http://localhost:3000 查看应用。
-
-### 4. 构建生产版本
-
-```bash
+# 构建生产版本
 npm run build
+
+# 启动生产服务器
 npm start
 ```
 
-## 数据结构
+访问 [http://localhost:3000](http://localhost:3000) 查看应用。
 
-### 赛事数据 (_db/badminton/2025.json)
-
-```json
-{
-  "races": [
-    {
-      "name": "马来西亚公开赛",
-      "englishName": "Malaysia Open",
-      "location": "吉隆坡",
-      "latitude": 3.1390,
-      "longitude": 101.6869,
-      "type": "open",
-      "category": "1000",
-      "isMajor": true,
-      "startDate": "2025-01-07",
-      "endDate": "2025-01-12",
-      "sessions": {
-        "day1": {
-          "date": "2025-01-07",
-          "type": "group"
-        },
-        "day2": {
-          "date": "2025-01-08",
-          "type": "group"
-        },
-        "day4": {
-          "date": "2025-01-10",
-          "type": "semifinal"
-        },
-        "day5": {
-          "date": "2025-01-11",
-          "type": "final"
-        }
-      },
-      "slug": "malaysia-open-2025",
-      "localeKey": "malaysia-open"
-    }
-  ]
-}
-```
-
-## API
-
-### 动态生成日历
-
-```
-GET /api/badminton-calendar?
-  o=1           # 是否包含公开赛 (1/0)
-  lc=1000       # 公开赛最低等级 (1000/500/300/100/all)
-  c=1           # 是否包含锦标赛 (1/0)
-  f=1           # 是否包含总决赛 (1/0)
-  y=1           # 是否包含奥运会 (1/0)
-  g=1           # 是否包含亚运会 (1/0)
-  m=1           # 是否只显示重点比赛 (1/0)
-  sg=1          # 是否包含小组赛 (1/0)
-  ss=1          # 是否包含半决赛 (1/0)
-  sf=1          # 是否包含决赛 (1/0)
-  a=30          # 闹钟分钟数 (0/30/60/90/120)
-  lang=zh       # 语言 (zh/en)
-```
-
-返回 ICS 格式的日历文件。
-
-### 示例
-
-```bash
-# 只看1000分以上公开赛
-curl "http://localhost:3000/api/badminton-calendar?o=1&lc=1000&c=0&f=0&y=0&g=0&m=0&sg=1&ss=1&sf=1&a=0&lang=zh"
-
-# 只看重点比赛（1000分、世锦赛、总决赛）
-curl "http://localhost:3000/api/badminton-calendar?o=1&lc=1000&c=1&f=1&y=0&g=0&m=1&sg=0&ss=0&sf=1&a=30&lang=zh"
-```
-
-## 目录结构
+## 📁 项目结构 | Project Structure
 
 ```
 badminton-calendar/
-├── _db/
-│   ├── sites.json                          # 站点配置
+├── _db/                      # 数据文件
 │   └── badminton/
-│       ├── config.json                     # 羽毛球站点配置
-│       ├── 2025.json                      # 2025年赛程数据
-│       └── 2026.json                      # 2026年赛程数据
-├── _public/
-│   └── badminton/                         # 静态资源
-├── locales/
-│   └── zh/
-│       └── localization.json               # 中文翻译
+│       ├── config.json       # 站点配置
+│       ├── 2025.json         # 2025年赛事数据
+│       └── 2026.json         # 2026年赛事数据
+├── locales/                  # 国际化翻译文件
+│   ├── zh/                   # 简体中文
+│   └── zh-HK/                # 繁体中文（香港）
+├── public/                   # 静态资源
 ├── src/
 │   ├── app/
-│   │   ├── [locale]/
-│   │   │   ├── page.tsx                   # 主页
-│   │   │   └── generate/
-│   │   │       ├── page.tsx               # 日历生成页
-│   │   │       └── badminton-form.tsx    # 羽毛球日历生成表单
-│   │   ├── api/
-│   │   │   └── badminton-calendar/
-│   │   │       └── route.ts               # 羽毛球日历动态生成API
-│   │   └── layout.tsx
-│   └── components/                         # UI组件
-├── next.config.js
-├── package.json
-└── tsconfig.json
+│   │   ├── [locale]/         # 多语言路由
+│   │   └── api/              # API 路由
+│   ├── components/           # React 组件
+│   └── models/               # 数据模型
+└── package.json
 ```
 
-## 添加新赛事
+## 📅 日历 API | Calendar API
 
-编辑 `_db/badminton/YYYY.json` 文件，添加新的赛事对象：
+生成自定义日历：
+
+```
+GET /api/badminton-calendar?o=1&lc=1000&c=1&f=1&a=60&lang=zh
+```
+
+**查询参数 | Query Parameters**:
+- `o` - 包含公开赛 (1/0) | Include open events
+- `lc` - 最低级别 (1000/750/500/300/100/all) | Minimum category
+- `c` - 包含锦标赛 (1/0) | Include championships
+- `f` - 包含总决赛 (1/0) | Include finals
+- `y` - 包含奥运会 (1/0) | Include Olympics
+- `g` - 包含亚运会 (1/0) | Include Asian Games
+- `m` - 仅重点赛事 (1/0) | Only major events
+- `sg` - 包含小组赛 (1/0) | Include group stage
+- `ss` - 包含半决赛 (1/0) | Include semifinals
+- `sf` - 包含决赛 (1/0) | Include finals
+- `a` - 提前提醒分钟数 (0/30/60/90/120) | Alarm minutes before
+- `lang` - 语言 (zh/zh-HK) | Language
+
+## 📝 添加赛事数据 | Adding Race Data
+
+1. 编辑 `_db/badminton/YYYY.json` 添加赛事对象
+2. 在 `locales/zh/localization.json` 中添加翻译
+3. 确保包含所有必需字段：
 
 ```json
 {
-  "name": "赛事名称",
-  "englishName": "Event Name",
-  "location": "城市",
-  "latitude": 0,
-  "longitude": 0,
-  "type": "open|championship|finals|olympics|asiangames",
-  "category": "1000|750|500|300|100",  // 仅当type为open时需要
-  "isMajor": true,
-  "startDate": "YYYY-MM-DD",
-  "endDate": "YYYY-MM-DD",
+  "name": "Malaysia Open",
+  "englishName": "Malaysia Open",
+  "location": "Kuala Lumpur",
+  "type": "open",
+  "category": "1000",
+  "startDate": "2025-01-07",
+  "endDate": "2025-01-12",
   "sessions": {
-    "day1": {
-      "date": "YYYY-MM-DD",
-      "type": "group|semifinal|final"
-    }
+    "day1": "2025-01-07T09:00:00+08:00",
+    "semifinal": "2025-01-11T13:00:00+08:00",
+    "final": "2025-01-12T13:00:00+08:00"
   },
-  "slug": "event-slug",
-  "localeKey": "event-locale-key"
+  "sessionTypes": {
+    "day1": "group",
+    "semifinal": "semifinal",
+    "final": "final"
+  },
+  "slug": "malaysia-open",
+  "localeKey": "malaysia-open"
 }
 ```
 
-然后添加翻译到 `locales/zh/localization.json`：
+## 🎨 主题定制 | Theme Customization
 
-```json
-{
-  "races": {
-    "event-locale-key": "赛事中文名称"
-  }
+主题通过 CSS 变量定义在 `src/app/[locale]/globals.css`：
+
+```css
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --card-bg: #f9fafb;
+  /* ... */
+}
+
+.dark {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --card-bg: #1a1a1a;
+  /* ... */
 }
 ```
 
-## 技术栈
+## 🤝 贡献 | Contributing
 
-- **Next.js 15** - React 框架
-- **React 19** - UI库
-- **TypeScript** - 类型安全
-- **Tailwind CSS** - 样式
-- **dayjs** - 日期处理
-- **ics** - ICS文件生成
-- **next-intl** - 国际化
+欢迎贡献！请随时提交 Pull Request。
 
-## 许可证
+Contributions are welcome! Feel free to submit a Pull Request.
 
-ISC
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'feat: add some amazing feature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启 Pull Request
 
-## 致谢
+## 📄 许可证 | License
 
-基于 [F1 Calendar](https://github.com/sportstimes/f1) 项目开发。
+MIT License - 详见 [LICENSE](LICENSE) 文件
+
+## 🙏 致谢 | Acknowledgments
+
+- 赛事数据来源：世界羽联 (BWF)
+- Logo 设计灵感：Yonex 品牌
+- 项目架构参考：[F1 Calendar](https://github.com/sportstimes/f1)
+
+## 📧 联系 | Contact
+
+如有问题或建议，请提交 [Issue](https://github.com/yourusername/badminton-calendar/issues)。
+
+For questions or suggestions, please open an [Issue](https://github.com/yourusername/badminton-calendar/issues).
