@@ -28,31 +28,21 @@ const Races = ({ year, races, config }: Props) => {
   let hasSetNextRace = false;
 
   // Check if we have more than 1 race that has already occurred and collapse them.
-  var shouldCollapsePastRaces = false;
-  var racesOccured = 0;
-  races.map((item, index) => {
-    if (item.sessions != null) {
-      let lastEventSessionKey = Object.keys(item.sessions)[
-        Object.keys(item.sessions).length - 1
-      ];
+  const racesOccured = races.reduce((count, item) => {
+    if (!item.sessions) return count;
 
-      if (
-        dayjs(item.sessions[lastEventSessionKey])
-          .add(2, 'hours')
-          .isBefore(dayjs(currentTime))
-      ) {
-        racesOccured = racesOccured + 1;
-      }
-    }
-  });
+    const lastSessionKey = Object.keys(item.sessions).at(-1);
+    if (!lastSessionKey) return count;
 
-  if (racesOccured > 1 || collapsePastRaces) {
-    shouldCollapsePastRaces = collapsePastRaces;
-  }
+    const hasOccurred = dayjs(item.sessions[lastSessionKey])
+      .add(2, 'hours')
+      .isBefore(dayjs(currentTime));
 
-  if (racesOccured == races.length) {
-    shouldCollapsePastRaces = false;
-  }
+    return hasOccurred ? count + 1 : count;
+  }, 0);
+
+  const shouldCollapsePastRaces =
+    racesOccured > 1 && racesOccured < races.length && collapsePastRaces;
 
   return (
     <div>
@@ -88,17 +78,14 @@ const Races = ({ year, races, config }: Props) => {
           const hasMultipleFeaturedEvents =
             config.featuredSessions.length !== 1;
 
-          var sessionDate = dayjs();
-          if (item.sessions != null) {
-            if (hasMultipleFeaturedEvents) {
-              let lastEventSessionKey = Object.keys(item.sessions)[
-                Object.keys(item.sessions).length - 1
-              ];
-              sessionDate = dayjs(item.sessions[lastEventSessionKey]);
-            } else {
-              sessionDate = dayjs(item.sessions[config.featuredSessions[0]]);
-            }
-          }
+          const sessionKeys = Object.keys(item.sessions || {});
+          const lastSessionKey = sessionKeys.at(-1);
+
+          const sessionDate = item.sessions
+            ? hasMultipleFeaturedEvents && lastSessionKey
+              ? dayjs(item.sessions[lastSessionKey])
+              : dayjs(item.sessions[config.featuredSessions[0]])
+            : dayjs();
 
           isNextRace = false;
 
@@ -114,14 +101,14 @@ const Races = ({ year, races, config }: Props) => {
           }
 
           const race: RaceRow = {
-            isNextRace: isNextRace,
+            isNextRace,
             hasOccured: sessionDate.isBefore(dayjs(currentTime)),
-            shouldCollapsePastRaces: shouldCollapsePastRaces,
+            shouldCollapsePastRaces,
             index,
-            item: item,
+            item,
             collapsed: !isNextRace,
-            config: config,
-            currentTime: currentTime
+            config,
+            currentTime
           };
 
           return <Race {...race} key={`${item.slug}-race`} />;

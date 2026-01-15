@@ -66,20 +66,21 @@ const Race = ({
 
   const hasMultipleFeaturedEvents = config.featuredSessions.length !== 1;
 
-  var firstEventSessionKey = Object.keys(item.sessions)[0];
-  var lastEventSessionKey = Object.keys(item.sessions)[
-    Object.keys(item.sessions).length - 1
-  ];
+  const sessionKeys = Object.keys(item.sessions || {});
+  const firstEventSessionKey = sessionKeys[0];
+  const lastEventSessionKey = sessionKeys.at(-1);
 
   const race: RaceRow = {
-    isNextRace: isNextRace,
-    hasOccured: dayjs(item.sessions[lastEventSessionKey]).isBefore(dayjs(currentTime)),
-    shouldCollapsePastRaces: shouldCollapsePastRaces,
+    isNextRace,
+    hasOccured: lastEventSessionKey
+      ? dayjs(item.sessions[lastEventSessionKey]).isBefore(dayjs(currentTime))
+      : false,
+    shouldCollapsePastRaces,
     index,
-    item: item,
+    item,
     collapsed: !isNextRace,
-    config: config,
-    currentTime: currentTime,
+    config,
+    currentTime,
   };
 
   return (
@@ -241,82 +242,61 @@ const Race = ({
   }
 
   function rowClasses(props: RaceRow) {
-    var classes = 'rounded bg-row ';
+    let classes = 'rounded bg-row ';
 
     // Fade out TBC races a little
     if (props.item.tbc) {
       classes += 'text-gray-300 ';
     }
 
-    // Bold upcoming races
-    let firstEventSessionKey = '';
-    let lastEventSessionKey = '';
+    if (!props.item.sessions) {
+      return classes + 'text-primary ';
+    }
 
-    if (props.item.sessions != null) {
-      firstEventSessionKey = Object.keys(props.item.sessions)[0];
-
-      lastEventSessionKey = Object.keys(props.item.sessions)[
-        Object.keys(props.item.sessions).length - 1
-      ];
-
-      // Strikethrough past races
-      if (props.hasOccured && !props.item.canceled) {
-        classes += 'line-through text-muted ';
-      } else if (props.hasOccured && props.item.canceled) {
-        classes += 'text-muted ';
-      } else {
-        classes += 'text-primary ';
-      }
-
-      if (props.hasOccured && props.shouldCollapsePastRaces) {
-        classes += 'hidden';
-      }
+    // Strikethrough past races
+    if (props.hasOccured && !props.item.canceled) {
+      classes += 'line-through text-muted ';
+    } else if (props.hasOccured && props.item.canceled) {
+      classes += 'text-muted ';
     } else {
       classes += 'text-primary ';
+    }
+
+    if (props.hasOccured && props.shouldCollapsePastRaces) {
+      classes += 'hidden';
     }
 
     return classes;
   }
 
   function titleRowClasses(props: RaceRow) {
-    var classes = '';
+    let classes = '';
 
     // Highlight Next Race
     if (props.isNextRace) {
       classes += 'text-yellow-600 ';
     }
 
-    if (props.item.sessions != null) {
-      lastEventSessionKey = Object.keys(props.item.sessions)[
-        Object.keys(props.item.sessions).length - 1
-      ];
-
-      if (
-        !dayjs(props.item.sessions[lastEventSessionKey])
-          .add(2, 'hours')
-          .isBefore(dayjs(props.currentTime)) &&
-        !props.item.canceled
-      ) {
-        classes += 'font-semibold ';
-      }
+    if (
+      props.item.sessions &&
+      lastEventSessionKey &&
+      !dayjs(props.item.sessions[lastEventSessionKey])
+        .add(2, 'hours')
+        .isBefore(dayjs(props.currentTime)) &&
+      !props.item.canceled
+    ) {
+      classes += 'font-semibold ';
     }
 
     return classes;
   }
 
   function titleRowTextClasses(props: RaceRow) {
-    var classes = '';
+    if (!props.item.canceled) return '';
 
-    // Strike out cancelled races
-    if (props.item.canceled) {
-      if (props.hasOccured) {
-        classes += 'line-through text-gray-500 ';
-      } else {
-        classes += 'line-through text-gray-400 ';
-      }
-    }
-
-    return classes;
+    return props.hasOccured
+      ? 'line-through text-gray-500 '
+      : 'line-through text-gray-400 ';
   }
 };
 

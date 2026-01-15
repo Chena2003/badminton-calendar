@@ -55,13 +55,30 @@ export async function GET(request: NextRequest) {
 
     const events = [];
 
+    // Helper function to create date array
+    const createDateArray = (date: dayjs.Dayjs, hour: number): [number, number, number, number, number] => [
+      date.year(),
+      date.month() + 1,
+      date.date(),
+      hour,
+      0,
+    ];
+
+    // Helper function to check if session should be included
+    const shouldIncludeSession = (sessionType: string): boolean => {
+      const sessionFilters: Record<string, boolean> = {
+        group: filters.includeGroup,
+        semifinal: filters.includeSemifinal,
+        final: filters.includeFinal,
+      };
+      return sessionFilters[sessionType] ?? true;
+    };
+
     for (const race of filteredRaces) {
       for (const [dayKey, dateStr] of Object.entries(race.sessions)) {
         const sessionType = race.sessionTypes?.[dayKey] || 'group';
 
-        if (sessionType === 'group' && !filters.includeGroup) continue;
-        if (sessionType === 'semifinal' && !filters.includeSemifinal) continue;
-        if (sessionType === 'final' && !filters.includeFinal) continue;
+        if (!shouldIncludeSession(sessionType)) continue;
 
         const raceName = strings.races?.[race.localeKey] || race.name;
         const sessionName =
@@ -82,20 +99,8 @@ export async function GET(request: NextRequest) {
         const startDate = dayjs(dateStr as string);
 
         events.push({
-          start: [
-            startDate.year(),
-            startDate.month() + 1,
-            startDate.date(),
-            9,
-            0,
-          ] as [number, number, number, number, number],
-          end: [
-            startDate.year(),
-            startDate.month() + 1,
-            startDate.date(),
-            21,
-            0,
-          ] as [number, number, number, number, number],
+          start: createDateArray(startDate, 9),
+          end: createDateArray(startDate, 21),
           title: `羽毛球: ${sessionName} (${raceName})`,
           description: `赛事：${raceName}\n地点：${race.location}`,
           location: race.location,
