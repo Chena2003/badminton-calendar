@@ -86,3 +86,9 @@ jspm_packages
 /src/app/icon.ico
 /public/narrow.jpg
 /public/wide.jpg
+
+# Claude Code assistant files
+.claude/
+CLAUDE.md
+error
+nul
