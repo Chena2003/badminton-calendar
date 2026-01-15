@@ -14,6 +14,7 @@ npm start               # Start production server
 
 # Build assets
 npm run setPublicAssets # Copy public assets to public directory
+node build/generate-icons.js # Generate icons from logo.png
 
 # Linting (ESLint installed but no script defined - use npx)
 npx eslint src/         # Run linter on src directory
@@ -212,3 +213,34 @@ src/
 - Uses next-intl for 35+ languages
 - PWA support with Firebase messaging
 - No test framework configured - add if testing is needed
+
+### Logo and Icon Management
+
+**Asset locations:**
+
+- Source logo: `logo.png` (root directory)
+- Site assets: `_public/badminton/` (favicon.ico, logo.png, icons)
+- Public output: `public/` (copied by setPublicAssets)
+- App favicon: `src/app/favicon.ico` (copied by setPublicAssets)
+
+**Generating icons from logo:**
+
+```bash
+# 1. Place new logo.png in root directory
+# 2. Generate all icon sizes (192x192, 512x512, 180x180)
+node build/generate-icons.js
+
+# 3. Generate favicon.ico
+node -e "const { default: pngToIco } = require('png-to-ico'); const fs = require('fs'); pngToIco('logo.png').then(buf => { fs.writeFileSync('_public/badminton/favicon.ico', buf); console.log('favicon.ico generated'); });"
+
+# 4. Copy assets to public and src/app directories
+npm run setPublicAssets
+```
+
+**Icon sizes generated:**
+
+- `android-chrome-192x192.png` (192x192)
+- `android-chrome-512x512.png` (512x512)
+- `apple-touch-icon.png` (180x180)
+- `maskable_icon_x512.png` (512x512)
+- `favicon.ico` (multi-size ICO file)
