@@ -33,7 +33,7 @@
     "@novu/node": "^2.0.1",
     "@tailwindcss/postcss": "^4.0.0",
     "countries-and-timezones": "^3.2.3",
-    "dayjs": "^1.11.5",
+    "dayjs": "^1.11.19",
     "firebase": "^12.8.0",
     "firebase-admin": "^13.6.0",
     "google-auth-library": "^10.5.0",
