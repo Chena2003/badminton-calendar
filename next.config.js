@@ -26,6 +26,9 @@ module.exports = (phase) => {
       typescript: {
         ignoreBuildErrors: true,
       },
+      experimental: {
+        allowedDevOrigins: ['192.168.1.219'],
+      },
       webpack: (cfg) => {
         cfg.module.rules.push({
           test: /\.md$/,
