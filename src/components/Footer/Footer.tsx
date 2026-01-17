@@ -7,6 +7,7 @@ import SiteSelector from '../../components/SiteSelector/SiteSelector';
 import YearSelector from '../../components/YearSelector/YearSelector';
 import EmailIcon from '../Icons/EmailIcon';
 import SupportButton from '../SupportButton/SupportButton';
+import GitHubIcon from '../Icons/GitHubIcon';
 import Link from 'next/link';
 
 interface Props {
@@ -36,7 +37,7 @@ const Footer = ({ config }: Props) => {
 
   return (
     <>
-      <footer className="max-w-screen-lg mx-auto mt-2 md:mt-10 px-0 sm:px-2">
+      <footer className="max-w-screen-lg mx-auto mt-2 md:mt-4 px-0 sm:px-2">
         <div className="max-w-7xl mx-auto overflow-hidden md:hidden">
           <div className="mt-1 mb-6 flex justify-center space-x-6">
             <LanguageSelector />
@@ -53,6 +54,19 @@ const Footer = ({ config }: Props) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 pt-4 px-2 text-center md:text-left">
           <div>
+            <p className="text-lg text-gray-400 px-2 md:px-0 mb-2 flex items-center justify-center md:justify-start gap-2 font-semibold">
+              <span>Made by Chena</span>
+              <a
+                href="https://github.com/Chena2003"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center hover:text-gray-300 transition-colors"
+                aria-label="GitHub Profile"
+              >
+                <GitHubIcon className="w-7 h-7" />
+              </a>
+            </p>
+
             <p className="text-base text-gray-400 text-xsm px-2 md:px-0">
               {t(`${process.env.NEXT_PUBLIC_SITE_KEY}.footnote`)}
             </p>
