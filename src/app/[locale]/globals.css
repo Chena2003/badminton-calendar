@@ -50,7 +50,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI',
     'Fira Sans', Avenir, 'Helvetica Neue', 'Lucida Grande', sans-serif;
   text-rendering: optimizeLegibility;
-  height: 100%;
   transition: background-color 0.3s ease, color 0.3s ease;
   position: relative;
   z-index: 0;
