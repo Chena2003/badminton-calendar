@@ -12,6 +12,11 @@ npm run dev              # Start development server (http://localhost:3000)
 npm run build           # Build for production
 npm start               # Start production server
 
+# Deployment
+# Deploy to EdgeOne Pages (fullstack Next.js project)
+# The deployment tool will automatically detect the project type and deploy
+# Project name is configured in .env.local as EDGEONE_PAGES_PROJECT_NAME
+
 # Build assets
 npm run setPublicAssets # Copy public assets to public directory
 node build/generate-icons.js # Generate icons from logo.png
@@ -244,3 +249,70 @@ npm run setPublicAssets
 - `apple-touch-icon.png` (180x180)
 - `maskable_icon_x512.png` (512x512)
 - `favicon.ico` (multi-size ICO file)
+
+## Deployment to EdgeOne Pages
+
+### Prerequisites
+
+- EdgeOne Pages account configured
+- Project name set in `.env.local`: `EDGEONE_PAGES_PROJECT_NAME=badminton-calendar`
+- Build completed successfully: `npm run build`
+
+### Deployment Process
+
+This is a **fullstack Next.js project** with:
+- API routes (`/api/badminton-calendar`)
+- Middleware for i18n routing
+- Server-side rendering (SSR)
+- Static site generation (SSG)
+
+**Deployment command:**
+```bash
+# Build the project first
+npm run build
+
+# Deploy using EdgeOne Pages MCP tool
+# The tool will automatically:
+# 1. Detect project type (fullstack)
+# 2. Deploy .next directory
+# 3. Configure server functions
+# 4. Return deployment URL
+```
+
+### Deployment Output
+
+After successful deployment, you will receive:
+
+- **Preview URL**: Temporary URL with authentication tokens for testing
+- **Project ID**: Unique identifier for the EdgeOne Pages project
+- **Console URL**: Link to manage the project in EdgeOne console
+- **Project Name**: Configured project name
+
+**Example output:**
+```json
+{
+  "url": "https://badminton-calendar.edgeone.cool?eo_token=xxx&eo_time=xxx",
+  "projectId": "pages-xxxxx",
+  "consoleUrl": "https://console.tencentcloud.com/edgeone/pages/project/...",
+  "projectName": "badminton-calendar"
+}
+```
+
+### Post-Deployment Steps
+
+1. **Custom Domain Setup**
+   - The preview URL includes temporary authentication tokens
+   - For production use, bind a custom domain in the EdgeOne console
+   - Navigate to the console URL provided in deployment output
+
+2. **Environment Variables**
+   - Configure production environment variables in EdgeOne console
+   - Required variables:
+     - `NEXT_PUBLIC_SITE_KEY=badminton`
+     - `NEXT_PUBLIC_CURRENT_YEAR=2025`
+   - Optional: Firebase, Postmark, Novu credentials for notifications
+
+3. **Monitoring**
+   - Check deployment logs in EdgeOne console
+   - Monitor API route performance
+   - Review middleware execution logs
