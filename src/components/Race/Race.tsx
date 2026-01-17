@@ -57,12 +57,20 @@ const Race = ({
     setCollapsed(!collapsed);
   };
 
-  // Translate race title or fall back to name
+  // Translate race title or fall back to name based on locale
   const raceTitle =
     item.localeKey &&
     t(`races.${item.localeKey}`) != `All.races.${item.localeKey}`
       ? t(`races.${item.localeKey}`)
+      : locale === 'en' && item.englishName
+      ? item.englishName
       : item.name;
+
+  // Select location based on locale
+  const raceLocation =
+    locale === 'en' && item.englishLocation
+      ? item.englishLocation
+      : item.location;
 
   const hasMultipleFeaturedEvents = config.featuredSessions.length !== 1;
 
@@ -109,9 +117,9 @@ const Race = ({
           <div className={`${titleRowClasses(race)}`}>
             <div className={titleRowTextClasses(race)}>
               {raceTitle}
-              {item.location && (
+              {raceLocation && (
                 <span className="ml-2 font-normal text-muted text-sm">
-                  - {item.location}
+                  - {raceLocation}
                 </span>
               )}
             </div>

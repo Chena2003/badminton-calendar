@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { Metadata } from 'next';
 import Layout from 'components/Layout/Layout';
 import Card from 'components/Card/Card';
 import Link from 'next/link';
@@ -16,6 +17,10 @@ export interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { timezone, locale } = await params;
+
+  const config = require(
+    `/_db/${process.env.NEXT_PUBLIC_SITE_KEY}/config.json`,
+  );
 
   const { locales } = i18nConfig;
   const currentLocale = locale || 'en';
@@ -36,9 +41,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return languages;
   };
 
-  const config = require(
-    `/_db/${process.env.NEXT_PUBLIC_SITE_KEY}/config.json`,
-  );
   const canonicalPath = currentLocale === 'en' ? '' : `/${currentLocale}`;
   const canonical = `https://${config.url}${canonicalPath}/timezone/${timezone}`;
 

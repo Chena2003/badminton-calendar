@@ -1,9 +1,10 @@
-import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Layout from 'components/Layout/Layout';
 import OptionsBar from 'components/OptionsBar/OptionsBar';
 import Races from 'components/Races/Races';
 import i18nConfig from '../../i18nConfig.js';
+import path from 'path';
+import fs from 'fs';
 
 export async function generateStaticParams(): Promise<{ locale: string }[]> {
   return [];
@@ -19,12 +20,12 @@ export default async function Page({
   setRequestLocale(locale);
 
   const currentYear = Number(process.env.NEXT_PUBLIC_CURRENT_YEAR);
-  const year = require(
-    `/_db/${process.env.NEXT_PUBLIC_SITE_KEY}/${currentYear}.json`,
-  );
-  const config = require(
-    `/_db/${process.env.NEXT_PUBLIC_SITE_KEY}/config.json`,
-  );
+
+  const yearPath = path.join(process.cwd(), `_db/${process.env.NEXT_PUBLIC_SITE_KEY}/${currentYear}.json`);
+  const year = JSON.parse(fs.readFileSync(yearPath, 'utf-8'));
+
+  const configPath = path.join(process.cwd(), `_db/${process.env.NEXT_PUBLIC_SITE_KEY}/config.json`);
+  const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 
   return (
     <>

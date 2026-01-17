@@ -1,0 +1,175 @@
+{
+  "All": {
+    "date": "Date",
+    "time": "Time",
+    "showPreviousRaces": "Show Past Matches",
+    "hidePreviousRaces": "Hide Past Matches",
+    "badges": {
+      "tbc": "TBC",
+      "tbc_title": "To Be Confirmed",
+      "tickets": "Tickets",
+      "canceled": "Canceled",
+      "next": "Coming Up"
+    },
+    "sessionTypes": {
+      "group": "Group Stage",
+      "semifinal": "Semifinals",
+      "final": "Finals"
+    },
+    "schedule": {
+      "day1": "Day 1",
+      "day2": "Day 2",
+      "day3": "Day 3",
+      "day4": "Day 4",
+      "day5": "Day 5",
+      "day6": "Day 6",
+      "day7": "Day 7",
+      "day8": "Day 8",
+      "day9": "Day 9",
+      "day10": "Day 10",
+      "group": "Group Stage",
+      "semifinal": "Semifinals",
+      "final": "Finals"
+    },
+    "badminton": {
+      "title": "Badminton Schedule Calendar",
+      "subtitle": "Official BWF Schedule",
+      "footnote": "All times are local and subject to change.",
+      "seo": {
+        "description": "2025 BWF Tournament Calendar with complete schedule information for all Opens, Championships, and Finals.",
+        "keywords": "badminton,schedule,calendar,BWF,2025,open,world championships",
+        "title": "Badminton Schedule Calendar 2025"
+      }
+    },
+    "races": {
+      "malaysia-open": "Malaysia Open",
+      "india-open": "India Open",
+      "indonesia-masters": "Indonesia Masters",
+      "thailand-masters": "Thailand Masters",
+      "german-open": "German Open",
+      "all-england-open": "All England Open",
+      "swiss-open": "Swiss Open",
+      "china-open": "China Open",
+      "singapore-open": "Singapore Open",
+      "malaysia-masters": "Malaysia Masters",
+      "thailand-open": "Thailand Open",
+      "indonesia-open": "Indonesia Open",
+      "australia-open": "Australia Open",
+      "japan-open": "Japan Open",
+      "korea-open": "Korea Open",
+      "chinese-taipei-open": "Chinese Taipei Open",
+      "china-masters": "China Masters",
+      "world-championships": "World Championships",
+      "hong-kong-open": "Hong Kong Open",
+      "vietnam-open": "Vietnam Open",
+      "arctic-open": "Arctic Open",
+      "denmark-open": "Denmark Open",
+      "french-open": "French Open",
+      "hylo-open": "HYLO Open",
+      "fuzhou-china-masters": "Fuzhou China Masters",
+      "shenzhen-china-masters": "Shenzhen China Masters",
+      "korea-masters": "Korea Masters",
+      "world-tour-finals": "BWF World Tour Finals",
+      "asian-games": "Asian Games",
+      "syed-modi-international": "Syed Modi International",
+      "guwahati-masters": "Guwahati Masters",
+      "odisha-masters": "Odisha Masters",
+      "ruichang-china-masters": "Ruichang China Masters",
+      "orleans-masters": "Orleans Masters",
+      "asian-championships": "Asian Championships",
+      "european-championships": "European Championships",
+      "thomas-and-uber-cup": "Thomas & Uber Cup",
+      "macau-open": "Macau Open",
+      "us-open": "US Open",
+      "canada-open": "Canada Open",
+      "abu-dhabi-masters": "Abu Dhabi Masters",
+      "kumamoto-japan-masters": "Kumamoto Japan Masters",
+      "kaohsiung-masters": "Kaohsiung Masters"
+    },
+    "eventTypes": {
+      "open": "Open",
+      "championship": "Championship",
+      "finals": "Finals",
+      "olympics": "Olympics",
+      "asiangames": "Asian Games"
+    },
+    "categories": {
+      "1000": "1000 Points",
+      "750": "750 Points",
+      "500": "500 Points",
+      "300": "300 Points",
+      "100": "100 Points",
+      "series": "Tour",
+      "all": "All"
+    },
+    "options": {
+      "calendar": "Add schedule to your calendar app",
+      "timezonePicker": {
+        "showing": "Currently showing times in timezone",
+        "pick": "Select timezone",
+        "detect": "Auto-detect"
+      },
+      "formatPicker": {
+        "title": "Time format",
+        "12hr": "12-hour",
+        "24hr": "24-hour"
+      },
+      "button": "Done"
+    },
+    "yearSelector": "Year",
+    "years": {
+      "title": "Select Year"
+    },
+    "timezones": {
+      "title": "Timezone Settings"
+    },
+    "languageSelector": "Select Language",
+    "contribute": "Add Language",
+    "javascript": "Badminton Calendar requires JavaScript enabled for the best experience.",
+    "footer": {
+      "coffee": "Support this project, buy us a coffee",
+      "twitter": "Follow us on Twitter",
+      "github": "Open source on GitHub",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "homescreen": "To add this website to your home screen, tap the share icon and select \"Add to Home Screen\"."
+    },
+    "header": {
+      "title": "Badminton Schedule Calendar",
+      "subtitle": "2025 BWF Schedule"
+    },
+    "form": {
+      "title": "Generate Badminton Match Calendar",
+      "description": "Select the match types and levels you want to follow, then generate a custom calendar.",
+      "eventTypes": "Include Event Types",
+      "includeOpen": "Open",
+      "includeChampionship": "Championships (World Championships, Continental Championships, etc.)",
+      "includeFinals": "Finals",
+      "includeOlympics": "Olympics",
+      "includeAsianGames": "Asian Games",
+      "minCategory": "Minimum Level",
+      "onlyMajor": "Show only major events",
+      "onlyMajorHint": "(1000 Points Open, Championships, Finals, Olympics, Asian Games)",
+      "sessionTypes": "Include Match Day Types",
+      "includeGroup": "Group Stage",
+      "includeSemifinal": "Semifinals",
+      "includeFinal": "Finals",
+      "alarm": "Reminder before match",
+      "alarmMinutes": "minutes",
+      "button": "Generate Calendar",
+      "nonOptionsSelected": "Please select at least one event type"
+    },
+    "download": {
+      "title": "Download Calendar",
+      "webcalTitle": "WebCal Subscription",
+      "webcalDescription": "After subscribing, your calendar will automatically sync when match times or schedules are updated.",
+      "webcalButton": "Subscribe to Calendar",
+      "gcalTitle": "Add to Google Calendar",
+      "gcalNotificationNotice": "Note: Google Calendar does not support custom alarm times.",
+      "gcalAddToGoogleCalendar": "Add to Google Calendar",
+      "icsTitle": "ICS File Download",
+      "icsDescription": "After downloading the ICS file, you can import it into Outlook, Apple Calendar, and other apps.",
+      "icsButton": "Download ICS File"
+    }
+  }
+}

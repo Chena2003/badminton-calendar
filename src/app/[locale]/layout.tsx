@@ -13,12 +13,20 @@ import {
 } from 'next-intl/server';
 import i18nConfig from '../../i18nConfig.js';
 
+import path from 'path';
+import fs from 'fs';
+
+interface Props {
+  params: Promise<{ locale: string }>;
+  children: React.ReactNode;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations('All');
   const currentYear = process.env.NEXT_PUBLIC_CURRENT_YEAR;
-  const config = require(
-    `/_db/${process.env.NEXT_PUBLIC_SITE_KEY}/config.json`,
-  );
+
+  const configPath = path.join(process.cwd(), `_db/${process.env.NEXT_PUBLIC_SITE_KEY}/config.json`);
+  const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 
   const { locales } = i18nConfig;
 
@@ -104,12 +112,10 @@ const leagueSpartan = League_Spartan({
   variable: '--font-league-spartan',
 });
 
-const locales = ['zh', 'zh-HK'];
-
-export default async function RootLayout({ children, params }) {
+export default async function RootLayout({ children, params }: Props) {
   const { locale } = await params;
 
-  if (!locales.includes(locale as any)) notFound();
+  if (!i18nConfig.locales.includes(locale as any)) notFound();
 
   setRequestLocale(locale);
 

@@ -1,11 +1,12 @@
 import { notFound } from 'next/navigation';
-import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { Metadata } from 'next';
 import Layout from 'components/Layout/Layout';
 import Card from 'components/Card/Card';
-import Link from 'next/link';
 import OptionsBar from 'components/OptionsBar/OptionsBar';
 import Races from 'components/Races/Races';
+import path from 'path';
+import fs from 'fs';
 
 export interface Props {
   params: { year: string; locale: string };
@@ -29,49 +30,40 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams() {
-  const config = require(
-    `/_db/${process.env.NEXT_PUBLIC_SITE_KEY}/config.json`,
-  );
-
-  let availableYears = config.availableYears;
-
-  const yearItems = [];
-  // for (let year in availableYears) {
-  //   yearItems.push(config.availableYears[year]);
-  // }
-
-  return yearItems;
+export async function generateStaticParams(): Promise<{ year: string; locale: string }[]> {
+  // We are not statically generating specific year pages at build time for now.
+  // They will be generated on demand.
+  return [];
 }
 
-export default async function Year({ children, params }) {
+export default async function Year({ params }: Props) {
   const { locale, year } = await params;
 
   setRequestLocale(locale);
 
   const t = await getTranslations('All');
 
-  const config = require(
-    `/_db/${process.env.NEXT_PUBLIC_SITE_KEY}/config.json`,
-  );
+  const configPath = path.join(process.cwd(), `_db/${process.env.NEXT_PUBLIC_SITE_KEY}/config.json`);
+  const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 
   let availableYears = config.availableYears;
   if (!availableYears.includes(parseInt(year))) {
     notFound();
   }
 
-  const data = require(`/_db/${process.env.NEXT_PUBLIC_SITE_KEY}/${year}.json`);
+  const dataPath = path.join(process.cwd(), `_db/${process.env.NEXT_PUBLIC_SITE_KEY}/${year}.json`);
+  const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
 
   if (data.races) {
     return (
-      <Layout year={year}>
+      <Layout year={parseInt(year)} config={config} showCTABar={true}>
         <OptionsBar pickerShowing={false} />
-        <Races year={year} races={data.races} />
+        <Races year={parseInt(year)} races={data.races} config={config} />
       </Layout>
     );
   } else {
     return (
-      <Layout>
+      <Layout year={parseInt(year)} config={config} showCTABar={false}>
         <h3 className="text-xl mb-4">
           Oops, unfortunately we dont go back that far yet.
         </h3>

@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createEvents } from 'ics';
 import dayjs from 'dayjs';
+import path from 'path';
+import fs from 'fs';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -24,12 +26,14 @@ export async function GET(request: NextRequest) {
       language: searchParams.get('lang') || 'zh',
     };
 
-    const config = require(`/_db/badminton/config.json`);
-    const yearData = require(
-      `/_db/badminton/${config.calendarOutputYear}.json`,
-    );
+    const configPath = path.join(process.cwd(), `_db/badminton/config.json`);
+    const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 
-    const i18n = require(`/locales/${filters.language}/localization.json`);
+    const yearDataPath = path.join(process.cwd(), `_db/badminton/${config.calendarOutputYear}.json`);
+    const yearData = JSON.parse(fs.readFileSync(yearDataPath, 'utf-8'));
+
+    const i18nPath = path.join(process.cwd(), `locales/${filters.language}/localization.json`);
+    const i18n = JSON.parse(fs.readFileSync(i18nPath, 'utf-8'));
     const strings = i18n['All'];
 
     const filteredRaces = yearData.races.filter((race: any) => {
