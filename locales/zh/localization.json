@@ -120,6 +120,9 @@
     "years": {
       "title": "选择年份"
     },
+    "timezones": {
+      "title": "时区设置"
+    },
     "languageSelector": "选择语言",
     "contribute": "添加语言",
     "javascript": "羽毛球日历需要启用 JavaScript 以获得最佳体验。",
