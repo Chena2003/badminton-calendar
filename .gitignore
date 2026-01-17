@@ -92,3 +92,7 @@ jspm_packages
 CLAUDE.md
 error
 nul
+
+
+# Deployment files
+/.edgeone/

@@ -12,9 +12,9 @@ type userContextType = {
     timeFormat: number;
     timezone: string;
     theme: Theme;
-    updateTimezone: (timezone:string) => void;
-    updateTimeFormat: (timeformat:number) => void;
-    updateCollapsePastRaces: (state:boolean) => void;
+    updateTimezone: (timezone: string) => void;
+    updateTimeFormat: (timeformat: number) => void;
+    updateCollapsePastRaces: (state: boolean) => void;
     collapsePastRaces: boolean;
     toggleTheme: () => void;
 };
@@ -22,7 +22,7 @@ type userContextType = {
 const userContextDefaultValues: userContextType = {
     timeFormat: 24,
     timezone: "Europe/London",
-    theme: 'dark',
+    theme: 'light',
     updateTimeFormat: () => {},
     updateTimezone: () => {},
     collapsePastRaces: true,
@@ -75,9 +75,9 @@ export function UserContextProvider({ children }: Props) {
             setTheme(storedTheme);
             document.documentElement.classList.toggle('dark', storedTheme === 'dark');
         } else {
-            // Default to dark
-            setTheme('dark');
-            document.documentElement.classList.add('dark');
+            // Default to light
+            setTheme('light');
+            document.documentElement.classList.remove('dark');
         }
         
         // Fetch the stored UUID
@@ -102,7 +102,7 @@ export function UserContextProvider({ children }: Props) {
         localStorage.setItem("timezone", timezone);
     };
     
-    const updateCollapsePastRaces = (bool:Boolean) => {
+    const updateCollapsePastRaces = (bool: boolean) => {
         updateStateCollapsePastRaces(bool);
         localStorage.setItem("collapsePastRaces", String(bool));
     };

@@ -171,6 +171,13 @@
       "icsTitle": "ICS 文件下載",
       "icsDescription": "下載ICS文件後，可以導入到Outlook、Apple日曆等應用。",
       "icsButton": "下載ICS文件"
+    },
+    "calendar": {
+      "title": "羽毛球",
+      "event": "即將開始",
+      "description": "賽事",
+      "location": "地點",
+      "alarm": "即將開始"
     }
   }
 }

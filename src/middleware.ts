@@ -3,13 +3,13 @@ import createMiddleware from 'next-intl/middleware';
 export default createMiddleware({
   // A list of all locales that are supported
   locales: [
+    "en",
     "zh",
-    "zh-HK",
-    "en"
+    "zh-HK"
   ],
 
   // Used when no locale matches
-  defaultLocale: 'zh',
+  defaultLocale: 'en',
   localePrefix: 'as-needed'
 });
 

@@ -171,6 +171,13 @@
       "icsTitle": "ICS File Download",
       "icsDescription": "After downloading the ICS file, you can import it into Outlook, Apple Calendar, and other apps.",
       "icsButton": "Download ICS File"
+    },
+    "calendar": {
+      "title": "Badminton",
+      "event": "Upcoming",
+      "description": "Event",
+      "location": "Location",
+      "alarm": "Starting soon"
     }
   }
 }

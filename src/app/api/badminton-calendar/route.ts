@@ -94,7 +94,7 @@ export async function GET(request: NextRequest) {
         if (filters.alarmMinutes > 0) {
           alarms.push({
             action: 'display' as 'display' | 'audio' | 'email',
-            description: `${raceName} - ${sessionName} 即将开始`,
+            description: `${strings.calendar?.alarm || '即将开始'}: ${raceName} - ${sessionName}`,
             trigger: { minutes: filters.alarmMinutes, before: true },
             repeat: 0,
           });
@@ -105,8 +105,8 @@ export async function GET(request: NextRequest) {
         events.push({
           start: createDateArray(startDate, 9),
           end: createDateArray(startDate, 21),
-          title: `羽毛球: ${sessionName} (${raceName})`,
-          description: `赛事：${raceName}\n地点：${race.location}`,
+          title: `${strings.calendar?.title || '羽毛球'}: ${sessionName} (${raceName})`,
+          description: `${strings.calendar?.description || '赛事'}：${raceName}\n${strings.calendar?.location || '地点'}：${race.location}`,
           location: race.location,
           url: `https://badminton-calendar.com/race/${race.slug}`,
           uid: `${config.calendarOutputYear}-${race.slug}-${dayKey}`,
