@@ -76,6 +76,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: createLanguageAlternates(),
     },
     manifest: '/manifest.json',
+    icons: {
+      icon: '/favicon.ico',
+      shortcut: '/favicon.ico',
+      apple: '/favicon.ico',
+    },
     twitter: {
       card: 'summary_large_image',
       creator: '@badmintoncal',

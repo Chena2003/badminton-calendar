@@ -67,11 +67,11 @@ export default function BadmintonForm() {
     <>
       {!form.submitted ? (
         <Card>
-          <h3 className="text-xl mb-4">生成羽毛球比赛日历</h3>
+          <h3 className="text-xl mb-4">{t('form.title')}</h3>
 
           <form onSubmit={handleSubmit}>
             <fieldset className="mb-6">
-              <legend className="font-semibold mb-3 block">包含赛事类型</legend>
+              <legend className="font-semibold mb-3 block">{t('form.eventTypes')}</legend>
 
               <div className="space-y-3">
                 <label className="flex items-center">
@@ -83,12 +83,12 @@ export default function BadmintonForm() {
                     }
                     className="mr-2"
                   />
-                  公开赛
+                  {t('form.includeOpen')}
                 </label>
 
                 {form.includeOpen && (
                   <div className="ml-6">
-                    <label className="block text-sm mb-2">最低等级</label>
+                    <label className="block text-sm mb-2">{t('form.minCategory')}</label>
                     <select
                       value={form.minCategory}
                       onChange={(e) =>
@@ -96,12 +96,12 @@ export default function BadmintonForm() {
                       }
                       className="w-full p-2 border border-themed rounded bg-input text-primary focus:ring-2 focus:ring-green-500 focus:border-green-500"
                     >
-                      <option value="1000">1000分（超级1000赛）</option>
-                      <option value="750">750分（超级750赛）</option>
-                      <option value="500">500分（超级500赛）</option>
-                      <option value="300">300分（超级300赛）</option>
-                      <option value="100">100分（超级100赛）</option>
-                      <option value="all">全部等级</option>
+                      <option value="1000">{t('categories.1000')}</option>
+                      <option value="750">{t('categories.750')}</option>
+                      <option value="500">{t('categories.500')}</option>
+                      <option value="300">{t('categories.300')}</option>
+                      <option value="100">{t('categories.100')}</option>
+                      <option value="all">{t('categories.all')}</option>
                     </select>
                   </div>
                 )}
@@ -118,7 +118,7 @@ export default function BadmintonForm() {
                     }
                     className="mr-2"
                   />
-                  锦标赛（世锦赛、洲际锦标赛等）
+                  {t('form.includeChampionship')}
                 </label>
 
                 <label className="flex items-center">
@@ -130,7 +130,7 @@ export default function BadmintonForm() {
                     }
                     className="mr-2"
                   />
-                  总决赛
+                  {t('form.includeFinals')}
                 </label>
 
                 <label className="flex items-center">
@@ -142,7 +142,7 @@ export default function BadmintonForm() {
                     }
                     className="mr-2"
                   />
-                  奥运会
+                  {t('form.includeOlympics')}
                 </label>
 
                 <label className="flex items-center">
@@ -154,14 +154,14 @@ export default function BadmintonForm() {
                     }
                     className="mr-2"
                   />
-                  亚运会
+                  {t('form.includeAsianGames')}
                 </label>
               </div>
             </fieldset>
 
             <fieldset className="mb-6">
               <legend className="font-semibold mb-3 block">
-                包含比赛日类型
+                {t('form.sessionTypes')}
               </legend>
 
               <div className="space-y-3">
@@ -174,7 +174,7 @@ export default function BadmintonForm() {
                     }
                     className="mr-2"
                   />
-                  小组赛
+                  {t('form.includeGroup')}
                 </label>
 
                 <label className="flex items-center">
@@ -186,7 +186,7 @@ export default function BadmintonForm() {
                     }
                     className="mr-2"
                   />
-                  半决赛
+                  {t('form.includeSemifinal')}
                 </label>
 
                 <label className="flex items-center">
@@ -198,7 +198,7 @@ export default function BadmintonForm() {
                     }
                     className="mr-2"
                   />
-                  决赛
+                  {t('form.includeFinal')}
                 </label>
               </div>
             </fieldset>
@@ -214,7 +214,7 @@ export default function BadmintonForm() {
                   className="mr-2"
                 />
                 <span>
-                  只显示重点比赛
+                  {t('form.onlyMajor')}
                   <small className="block text-muted">
                     {t('form.onlyMajorHint')}
                   </small>
@@ -235,59 +235,59 @@ export default function BadmintonForm() {
                   }
                   className="mr-2"
                 />
-                比赛前提醒
+                {t('form.alarm')}
                 <select
                   value={form.alarmMinutes}
                   onChange={(e) =>
                     setForm({ ...form, alarmMinutes: parseInt(e.target.value) })
                   }
                   disabled={form.alarmMinutes === 0}
-                  className="ml-2 p-2 border border-themed rounded bg-input text-primary focus:ring-2 focus:ring-green-500 focus:border-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="ml-2 p-1 px-3 border border-themed rounded bg-input text-primary focus:ring-2 focus:ring-green-500 focus:border-green-500 disabled:opacity-50 disabled:cursor-not-allowed text-sm min-w-[100px] w-auto"
                 >
-                  <option value="30">30分钟</option>
-                  <option value="60">60分钟</option>
-                  <option value="90">90分钟</option>
-                  <option value="120">120分钟</option>
+                  <option value="30">30 {t('form.alarmMinutes')}</option>
+                  <option value="60">60 {t('form.alarmMinutes')}</option>
+                  <option value="90">90 {t('form.alarmMinutes')}</option>
+                  <option value="120">120 {t('form.alarmMinutes')}</option>
                 </select>
               </label>
             </fieldset>
 
             <button type="submit" className="btn">
-              生成日历
+              {t('form.button')}
             </button>
           </form>
         </Card>
       ) : (
         <>
-          <h3 className="text-xl mb-4">下载日历</h3>
+          <h3 className="text-xl mb-4">{t('download.title')}</h3>
 
           <Card className="mb-6">
-            <h4 className="uppercase mb-4">WebCal 订阅</h4>
+            <h4 className="uppercase mb-4">{t('download.webcalTitle')}</h4>
             <p className="mb-4">
-              订阅后，当比赛时间或赛程更新时，你的日历会自动同步更新。
+              {t('download.webcalDescription')}
             </p>
             <a href={urls.webcalURL} className="btn">
-              订阅日历
+              {t('download.webcalButton')}
             </a>
           </Card>
 
           <Card className="mb-6">
-            <h4 className="uppercase mb-4">添加到 Google 日历</h4>
+            <h4 className="uppercase mb-4">{t('download.gcalTitle')}</h4>
             <a
               href={`https://www.google.com/calendar/render?cid=${encodeURIComponent(urls.webcalURL)}`}
               className="btn"
             >
-              添加到 Google 日历
+              {t('download.gcalAddToGoogleCalendar')}
             </a>
           </Card>
 
           <Card>
-            <h4 className="uppercase mb-4">ICS 文件下载</h4>
+            <h4 className="uppercase mb-4">{t('download.icsTitle')}</h4>
             <p className="mb-4">
-              下载ICS文件后，可以导入到Outlook、Apple日历等应用。
+              {t('download.icsDescription')}
             </p>
             <a href={urls.downloadURL} className="btn">
-              下载ICS文件
+              {t('download.icsButton')}
             </a>
           </Card>
         </>
