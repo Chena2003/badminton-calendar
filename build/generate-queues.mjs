@@ -57,9 +57,7 @@ async function generateQueue(siteKey) {
     // Content
     var title = race.name;
 
-    if (siteKey != 'f1') {
-      title = `${race.name} - ${localizedStrings[siteKey]['title']}`;
-    }
+    title = `${race.name} - ${localizedStrings[siteKey]['title']}`;
 
     if (race.localeKey != null && race.localeKey in localizedStrings['races']) {
       title = localizedStrings['races'][race.localeKey];
@@ -88,7 +86,7 @@ async function generateQueue(siteKey) {
           body = localizedStrings['schedule'][session];
         }
 
-        body = `${body} will start soon! 🏎️`;
+        body = `${body} will start soon! 🏸`;
 
         const scheduledAt = dayjs(race.sessions[session]).subtract(
           5,
@@ -98,10 +96,6 @@ async function generateQueue(siteKey) {
         const ref = `${scheduledAt.unix()}-${race.slug}-${session}`;
         var topic = `${siteKey}-${session}`;
 
-        if (session == 'sprintQualifying') {
-          topic = `${siteKey}-sprint`;
-        }
-
         if (debug) {
           console.log({
             scheduledAt: scheduledAt.toDate(),
@@ -109,14 +103,6 @@ async function generateQueue(siteKey) {
             body: body,
             type: 'push',
             topic: topic,
-          });
-
-          const tweet = `${title}: ${body} https://${config.url}`;
-
-          console.log({
-            scheduledAt: scheduledAt.toDate(),
-            title: tweet,
-            type: 'buffer',
           });
         } else {
           await collectionRef.doc(ref).set({
@@ -127,15 +113,6 @@ async function generateQueue(siteKey) {
             topic: `${siteKey}-${session}`,
           });
 
-          if (siteKey == 'f1') {
-            const ref2 = `${scheduledAt.unix()}-${race.slug}-${session}-buffer`;
-            const tweet = `${title}: ${body} https://f1calendar.com`;
-            await collectionRef.doc(ref2).set({
-              scheduledAt: scheduledAt.toDate(),
-              title: tweet,
-              type: 'buffer',
-            });
-          }
         }
       }
     }

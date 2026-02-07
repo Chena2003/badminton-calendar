@@ -1,6 +1,6 @@
 # Project Context: Badminton Calendar Generator
 
-This project is a Next.js application designed to generate ICS calendar files for badminton tournaments. It is a fork of a multi-sport calendar platform (originally for F1) and retains a multi-site architecture.
+This project is a Next.js application designed to generate ICS calendar files for badminton tournaments.
 
 ## 🏗️ Project Overview
 
@@ -58,7 +58,6 @@ The codebase supports multiple sports. The active sport is defined by `NEXT_PUBL
     *   `api/badminton-calendar/`: The dynamic generation endpoint.
 *   **`components/`**: React components.
     *   `badminton-form.tsx`: The form UI for selecting calendar options.
-*   **`pages/api/`**: Legacy Pages Router APIs (retained from F1 codebase).
 
 ## 🛠️ Common Tasks
 

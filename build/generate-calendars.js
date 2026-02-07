@@ -43,13 +43,7 @@ function generateCalendars(siteKey) {
     calendarOptions.push(sessionMap[session]);
   }
 
-  // Site specific logic...
-  // Remove any unsupported session types
-  calendarOptions = calendarOptions.filter(
-    (item) => item !== 'sprintQualifying',
-  );
-
-  // Add support for other when session key is not in the sessionMap (as frequently seen in indycar)
+  // Add support for other when session key is not in the sessionMap
   if (config.sessions.includes('other') && !calendarOptions.includes('other')) {
     calendarOptions.push('other');
   }
@@ -154,7 +148,7 @@ function generateCalendars(siteKey) {
               title = localizedStrings.races[race.localeKey];
             }
 
-            let category = 'Grand Prix';
+            let category = 'Tournament';
 
             // If the session isn't featured then add the session name in front...
             // Or if there are multiple featured sessions then add the session name in front (sprint, feature etc)...
@@ -249,7 +243,7 @@ function generateCalendars(siteKey) {
                 year +
                 '.' +
                 config.url +
-                '/#GP' +
+                '/#E' +
                 i +
                 '_' +
                 year +

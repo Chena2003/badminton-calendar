@@ -69,9 +69,9 @@ export default async function Year({ params }: Props) {
         </h3>
         <Card>
           <p>
-            Want to add more historical dates to F1 Calendar? Contribute
+            Want to add more historical tournament data? Contribute
             previous seasons via our{' '}
-            <a href="https://github.com/sportstimes/f1">GitHub repository</a>.
+            <a href="https://github.com/chena/badminton-calendar">GitHub repository</a>.
           </p>
         </Card>
       </Layout>

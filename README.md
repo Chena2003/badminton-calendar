@@ -275,7 +275,6 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 - 赛事数据来源：世界羽联 (BWF)
 - Logo 设计灵感：Yonex 品牌
-- 项目架构参考：[F1 Calendar](https://github.com/sportstimes/f1)
 
 ## 📧 联系 | Contact
 

@@ -39,35 +39,9 @@ module.exports = (phase) => {
       redirects: async function redirects() {
         const rules = [];
 
-        // Handle 2022 adjustment to separate sprint races out as a separate session.
-        // This allows users who generated a url prior to 2022 to get sprint sessions
-        // Without needing to regenerate the url for the new format.
-        if (process.env.NEXT_PUBLIC_SITE_KEY === 'f1') {
-          rules.push({
-            source: '/download/:prefix*_q_:suffix',
-            permanent: true,
-            destination: `https://files-${process.env.NEXT_PUBLIC_SITE_KEY}.motorsportcalendars.com/:prefix*_qualifying_sprint_\:suffix`,
-          });
-
-          rules.push(
-            {
-              source: '/f1_p1_p2_p3_q_gp.ics',
-              permanent: true,
-              destination:
-                'https://files-f1.motorsportcalendars.com/f1-calendar_p1_p2_p3_qualifying_sprint_gp.ics',
-            },
-            {
-              source: '/download.php',
-              permanent: true,
-              destination:
-                'https://files-f1.motorsportcalendars.com/f1-calendar_p1_p2_p3_qualifying_sprint_gp.ics',
-            },
-          );
-        }
-
         rules.push({
           source: '/download/:file*',
-          destination: `https://files-${process.env.NEXT_PUBLIC_SITE_KEY}.motorsportcalendars.com/:file*`,
+          destination: `https://files-${process.env.NEXT_PUBLIC_SITE_KEY}.badminton-calendar.com/:file*`,
           permanent: true,
         });
 
