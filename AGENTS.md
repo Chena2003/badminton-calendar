@@ -2,6 +2,15 @@
 
 This file contains guidelines for agentic coding agents working in this repository.
 
+## Project Overview
+
+This is a **badminton tournament calendar** web application built with Next.js 15 (App Router) and React 19. It generates customizable ICS calendar files for BWF (Badminton World Federation) tournaments, supporting multi-language, timezone detection, and PWA features.
+
+- **Site key**: `badminton`
+- **Current year**: 2026
+- **Available years**: 2025, 2026
+- **Repository**: https://github.com/Chena2003/badminton-calendar
+
 ## Build and Development Commands
 
 ```bash
@@ -12,10 +21,9 @@ npm run dev              # Start development server (http://localhost:3000)
 npm run build           # Build for production
 npm start               # Start production server
 
-# Deployment
-# Deploy to EdgeOne Pages (fullstack Next.js project)
-# The deployment tool will automatically detect the project type and deploy
-# Project name is configured in .env.local as EDGEONE_PAGES_PROJECT_NAME
+# Testing (Vitest)
+npm test                # Run tests once
+npm run test:watch      # Run tests in watch mode
 
 # Build assets
 npm run setPublicAssets # Copy public assets to public directory
@@ -25,8 +33,28 @@ node build/generate-icons.js # Generate icons from logo.png
 npx eslint src/         # Run linter on src directory
 npx eslint --fix src/   # Auto-fix linting issues
 
-# Note: No test framework is currently configured
+# Calendar generation (CI/CD)
+node build/generate-calendars.js badminton  # Generate ICS calendar files
+node build/generate-queues.mjs badminton    # Generate notification queues
+
+# Deployment
+# Deploy to EdgeOne Pages (fullstack Next.js project)
+# Project name configured in .env.local as EDGEONE_PAGES_PROJECT_NAME
 ```
+
+## Tech Stack
+
+- **Framework**: Next.js 15.0.4 (App Router) + React 19.2.3
+- **Language**: TypeScript 5.0.4 (strict mode)
+- **Styling**: Tailwind CSS 4.1.18 + PostCSS
+- **Internationalization**: next-intl 3.9.1 (3 languages: zh, zh-HK, en)
+- **Date handling**: dayjs with utc/timezone plugins
+- **Calendar generation**: ics 3.4.0
+- **Testing**: Vitest 4.0.18 + jsdom
+- **PWA**: @ducanh2912/next-pwa 10.2.5
+- **Backend services**: Firebase (Firestore, Cloud Messaging), Postmark (email), Novu (notifications)
+- **Analytics**: Plausible (next-plausible)
+- **Deployment**: EdgeOne Pages (app), Cloudflare Workers (ICS files)
 
 ## Code Style Guidelines
 
@@ -135,6 +163,8 @@ export async function GET(request: NextRequest) {
 
 ### Internationalization
 
+3 supported languages: Simplified Chinese (`zh`, default), Traditional Chinese Hong Kong (`zh-HK`), English (`en`).
+
 ```typescript
 // Get translations in components
 const t = useTranslations('All');
@@ -162,30 +192,99 @@ dayjs.extend(dayjstimezone);
 const date = dayjs(dateString).tz(timezone).format('D MMM');
 ```
 
-### File Organization
+## Project Structure
 
 ```
-src/
-├── app/                  # Next.js App Router pages
-│   ├── api/             # API routes
-│   ├── [locale]/        # Internationalized pages
-│   ├── layout.tsx
-│   └── page.tsx
-├── components/          # Reusable components (one per directory)
-│   ├── Card/
-│   │   └── Card.tsx
-│   └── Race/
-│       └── Race.tsx
-├── models/             # TypeScript models/types
-├── i18n.ts            # i18n configuration
-└── middleware.ts      # Next.js middleware
+badminton-calendar/
+├── _db/                          # Tournament data
+│   ├── badminton/
+│   │   ├── config.json          # Site config (event types, session types)
+│   │   ├── 2025.json            # 2025 tournament data
+│   │   └── 2026.json            # 2026 tournament data
+│   └── sites.json               # Site registry
+├── _public/                      # Site-specific public assets template
+├── locales/                      # i18n translation files
+│   ├── en/localization.json
+│   ├── zh/localization.json
+│   └── zh-HK/localization.json
+├── public/                       # Static assets (copied from _public/)
+├── build/                        # Build & CI scripts
+│   ├── generate-calendars.js    # ICS calendar file generator
+│   ├── generate-queues.mjs      # Notification queue generator
+│   ├── generate-icons.js        # Icon generator from logo.png
+│   └── public-assets.js         # Copy _public/ assets to public/
+├── config/
+│   └── firebase.ts              # Firebase client configuration
+├── src/
+│   ├── app/                     # Next.js App Router
+│   │   ├── [locale]/            # Internationalized pages
+│   │   │   ├── page.tsx         # Main schedule page
+│   │   │   ├── layout.tsx       # Locale layout
+│   │   │   ├── generate/        # Calendar generation page
+│   │   │   ├── subscribe/       # Email subscription page
+│   │   │   ├── notifications/   # Push notification settings
+│   │   │   ├── timezone/        # Timezone selection
+│   │   │   ├── year/            # Year selection
+│   │   │   └── email/           # Email confirmation/unsubscribe
+│   │   ├── api/
+│   │   │   └── badminton-calendar/route.ts  # Dynamic calendar API
+│   │   ├── layout.tsx           # Root layout
+│   │   ├── page.tsx             # Root redirect
+│   │   ├── robots.ts            # SEO robots.txt
+│   │   └── sitemap.ts           # SEO sitemap
+│   ├── components/              # React components (one per directory)
+│   │   ├── Badges/              # CanceledBadge, NextBadge, TBCBadge, TicketsBadge
+│   │   ├── Banner/
+│   │   ├── Card/
+│   │   ├── CTABar/
+│   │   ├── Footer/
+│   │   ├── Header/
+│   │   ├── Icons/               # SVG icon components
+│   │   ├── LanguageSelector/
+│   │   ├── Layout/              # Layout, FullWidthLayout
+│   │   ├── Logo/
+│   │   ├── Notice/
+│   │   ├── OptionsBar/
+│   │   ├── Race/                # Race, RaceTR
+│   │   ├── Races/
+│   │   ├── RaceSchema/
+│   │   ├── RaceSchemas/
+│   │   ├── SiteSelector/
+│   │   ├── SupportButton/
+│   │   ├── ThemeToggle/
+│   │   ├── Toggle/
+│   │   ├── TopBar/
+│   │   ├── UserContext.tsx      # Global user state (theme, timezone)
+│   │   ├── YearSelector/
+│   │   └── __tests__/           # Component tests
+│   ├── models/
+│   │   ├── RaceModel.ts         # Race data model
+│   │   └── Sessions.ts          # Session data model
+│   ├── __tests__/               # Test setup
+│   │   └── setup.ts             # Vitest setup file
+│   ├── middleware.ts             # i18n routing middleware
+│   ├── i18n.ts                  # i18n configuration
+│   └── i18nConfig.js            # i18n locale definitions
+├── .github/
+│   ├── workflows/
+│   │   ├── detect-db-changes.yml  # Auto-trigger on DB changes
+│   │   ├── ics.yml                # Deploy ICS to Cloudflare Workers
+│   │   └── queues.yml             # Generate notification queues
+│   └── dependabot.yml
+├── vitest.config.ts              # Vitest test configuration
+├── next.config.js                # Next.js configuration
+├── tsconfig.json                 # TypeScript configuration
+├── .eslintrc                     # ESLint configuration
+├── .prettierrc.js                # Prettier configuration
+├── package.json
+└── .env.local                    # Environment variables
 ```
 
 ### Linting and Formatting
 
 - **Prettier**: Single quotes, 2 spaces, 80 char width, semicolons
 - **ESLint**: Next.js + Prettier config
-- **No explicit test command**: Add tests if needed
+- **Commit convention**: Conventional Commits (feat, fix, chore, docs, etc.)
 
 ### Specific Patterns
 
@@ -201,9 +300,16 @@ src/
 
 ### Environment Variables
 
-- Use `process.env.NEXT_PUBLIC_*` for public variables
-- `.env.local` for local development
-- Required: `NEXT_PUBLIC_SITE_KEY`, `NEXT_PUBLIC_CURRENT_YEAR`
+Required:
+- `NEXT_PUBLIC_SITE_KEY` - Site identifier (always `badminton`)
+- `NEXT_PUBLIC_CURRENT_YEAR` - Current calendar year (2026)
+
+Optional:
+- `EDGEONE_PAGES_PROJECT_NAME` - EdgeOne deployment project name
+- `NEXT_PUBLIC_GOOGLE_VERIFICATION` - Google site verification
+- `NEXT_PUBLIC_PLAUSIBLE_KEY` - Plausible analytics key
+- `NEXT_PUBLIC_FIREBASE_*` - Firebase configuration (API key, auth domain, project ID, etc.)
+- `NEXT_PUBLIC_NOVU_API` - Novu notification API key
 
 ### Data Loading
 
@@ -211,13 +317,15 @@ src/
 - Client components: Use hooks and API calls
 - Static params: `generateStaticParams()` for static routes
 
-### Important Notes
+### Data Structure
 
-- This is a **badminton calendar** application (multi-site codebase)
-- Main site key: `badminton`
-- Uses next-intl for 35+ languages
-- PWA support with Firebase messaging
-- No test framework configured - add if testing is needed
+Tournament data is stored in `_db/badminton/{year}.json`. Each tournament has:
+- `name`, `englishName`, `location` - Basic info
+- `type` - Event type: `open`, `championship`, `finals`, `olympics`, `asiangames`
+- `category` - For open events: `1000`, `750`, `500`, `300`, `100`, `series`
+- `sessions` - Session timestamps (e.g., `group`, `semifinal`, `final`)
+- `sessionTypes` - Maps session keys to types
+- `slug`, `localeKey` - URL slug and i18n key
 
 ### Logo and Icon Management
 
@@ -250,23 +358,21 @@ npm run setPublicAssets
 - `maskable_icon_x512.png` (512x512)
 - `favicon.ico` (multi-size ICO file)
 
-## Deployment to EdgeOne Pages
+## CI/CD Workflows
 
-### Prerequisites
+### detect-db-changes.yml
+Triggers on push to `main` when `_db/**/2025.json` or `_db/**/2026.json` changes. Detects the changed site (badminton) and triggers `ics.yml` and `queues.yml` workflows.
 
-- EdgeOne Pages account configured
-- Project name set in `.env.local`: `EDGEONE_PAGES_PROJECT_NAME=badminton-calendar`
-- Build completed successfully: `npm run build`
+### ics.yml
+Generates ICS calendar files and deploys to Cloudflare Workers. Requires secrets: `CF_API_TOKEN`, `CF_ZONE_ID`, `CF_ACCOUNT_ID`.
 
-### Deployment Process
+### queues.yml
+Generates email/push notification queues and stores in Firebase Firestore. Requires secret: `FIREBASE_CREDENTIALS`.
 
-This is a **fullstack Next.js project** with:
-- API routes (`/api/badminton-calendar`)
-- Middleware for i18n routing
-- Server-side rendering (SSR)
-- Static site generation (SSG)
+## Deployment
 
-**Deployment command:**
+### EdgeOne Pages (Application)
+
 ```bash
 # Build the project first
 npm run build
@@ -279,40 +385,15 @@ npm run build
 # 4. Return deployment URL
 ```
 
-### Deployment Output
+### Cloudflare Workers (ICS Files)
 
-After successful deployment, you will receive:
+ICS calendar files are deployed via the `ics.yml` GitHub workflow to Cloudflare Workers for efficient static file serving.
 
-- **Preview URL**: Temporary URL with authentication tokens for testing
-- **Project ID**: Unique identifier for the EdgeOne Pages project
-- **Console URL**: Link to manage the project in EdgeOne console
-- **Project Name**: Configured project name
+### Post-Deployment
 
-**Example output:**
-```json
-{
-  "url": "https://badminton-calendar.edgeone.cool?eo_token=xxx&eo_time=xxx",
-  "projectId": "pages-xxxxx",
-  "consoleUrl": "https://console.tencentcloud.com/edgeone/pages/project/...",
-  "projectName": "badminton-calendar"
-}
-```
-
-### Post-Deployment Steps
-
-1. **Custom Domain Setup**
-   - The preview URL includes temporary authentication tokens
-   - For production use, bind a custom domain in the EdgeOne console
-   - Navigate to the console URL provided in deployment output
-
-2. **Environment Variables**
-   - Configure production environment variables in EdgeOne console
-   - Required variables:
-     - `NEXT_PUBLIC_SITE_KEY=badminton`
-     - `NEXT_PUBLIC_CURRENT_YEAR=2025`
-   - Optional: Firebase, Postmark, Novu credentials for notifications
-
-3. **Monitoring**
-   - Check deployment logs in EdgeOne console
-   - Monitor API route performance
-   - Review middleware execution logs
+1. **Custom Domain** - Bind domain in EdgeOne console
+2. **Environment Variables** - Configure in EdgeOne console:
+   - `NEXT_PUBLIC_SITE_KEY=badminton`
+   - `NEXT_PUBLIC_CURRENT_YEAR=2026`
+   - Optional: Firebase, Postmark, Novu credentials
+3. **Monitoring** - Check deployment logs in EdgeOne console
