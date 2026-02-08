@@ -77,6 +77,6 @@
     "tailwindcss": "^4.1.18",
     "typescript": "^5.0.4",
     "vitest": "^4.0.18",
-    "webpack": "^5.90.3"
+    "webpack": "^5.105.0"
   }
 }
