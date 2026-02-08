@@ -51,8 +51,6 @@ body {
     'Fira Sans', Avenir, 'Helvetica Neue', 'Lucida Grande', sans-serif;
   text-rendering: optimizeLegibility;
   transition: background-color 0.3s ease, color 0.3s ease;
-  position: relative;
-  z-index: 0;
 }
 
 body::before {
@@ -61,18 +59,13 @@ body::before {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-image: var(--shuttlecock-pattern);
   background-size: 100px 100px;
   background-repeat: repeat;
   opacity: 0.03;
   pointer-events: none;
-  z-index: 1;
-}
-
-body > * {
-  position: relative;
-  z-index: 2;
+  z-index: -1;
 }
 
 .form-tick:checked {
