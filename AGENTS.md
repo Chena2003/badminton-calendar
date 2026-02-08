@@ -320,12 +320,34 @@ Optional:
 ### Data Structure
 
 Tournament data is stored in `_db/badminton/{year}.json`. Each tournament has:
-- `name`, `englishName`, `location` - Basic info
+- `name`, `englishName`, `location`, `englishLocation` - Basic info with coordinates
+- `latitude`, `longitude` - Geographic coordinates for the tournament location
 - `type` - Event type: `open`, `championship`, `finals`, `olympics`, `asiangames`
 - `category` - For open events: `1000`, `750`, `500`, `300`, `100`, `series`
-- `sessions` - Session timestamps (e.g., `group`, `semifinal`, `final`)
-- `sessionTypes` - Maps session keys to types
-- `slug`, `localeKey` - URL slug and i18n key
+- `isMajor` - Boolean flag indicating if this is a major tournament (see rules below)
+- `startDate`, `endDate` - Tournament date range (ISO 8601 format)
+- `sessions` - Session timestamps mapped to dates (e.g., `day1`, `day2`, etc.)
+- `sessionTypes` - Maps session keys to types (`group`, `semifinal`, `final`)
+- `slug`, `localeKey` - URL slug and i18n translation key
+
+#### isMajor Field Rules
+
+The `isMajor` field determines which tournaments are highlighted as major events in the UI. A tournament should have `isMajor: true` ONLY if it meets one of these criteria:
+
+1. **Super 1000 tournaments** - `type: "open"` AND `category: "1000"`
+   - Examples: Malaysia Open, All England Open, China Open, Indonesia Open, Japan Open
+
+2. **Championships** - `type: "championship"`
+   - Examples: World Championships, Asian Championships, European Championships, Thomas & Uber Cup
+
+3. **Olympics** - `type: "olympics"`
+
+4. **Finals** - `type: "finals"`
+   - Example: World Tour Finals
+
+All other tournaments (categories 750, 500, 300, 100) should have `isMajor: false`, regardless of their prestige or prize money.
+
+**Important**: When adding or modifying tournament data, ensure the `isMajor` field follows these rules exactly. The config file at `_db/badminton/config.json` defines `majorCategories: ["1000"]` for open events and `majorEvent: true` for championship/finals/olympics types.
 
 ### Logo and Icon Management
 
