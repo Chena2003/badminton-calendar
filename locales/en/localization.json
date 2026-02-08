@@ -9,7 +9,8 @@
       "tbc_title": "To Be Confirmed",
       "tickets": "Tickets",
       "canceled": "Canceled",
-      "next": "Coming Up"
+      "next": "Coming Up",
+      "major": "Major Event"
     },
     "sessionTypes": {
       "group": "Group Stage",

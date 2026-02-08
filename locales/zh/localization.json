@@ -9,7 +9,8 @@
       "tbc_title": "待确认",
       "tickets": "门票",
       "canceled": "已取消",
-      "next": "即将开始"
+      "next": "即将开始",
+      "major": "重点赛事"
     },
     "sessionTypes": {
       "group": "小组赛",

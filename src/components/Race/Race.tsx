@@ -9,6 +9,7 @@ import React, { useState } from 'react';
 import { useUserContext } from '../../components/UserContext';
 import RaceModel from '../../models/RaceModel';
 import CanceledBadge from '../Badges/CanceledBadge';
+import MajorEventBadge from '../Badges/MajorEventBadge';
 import NextBadge from '../Badges/NextBadge';
 import TBCBadge from '../Badges/TBCBadge';
 import RaceTR from '../Race/RaceTR';
@@ -124,6 +125,7 @@ const Race = ({
               )}
             </div>
           </div>
+          {item.isMajor && !item.canceled && <MajorEventBadge />}
           {isNextRace && !item.tbc && !item.canceled && <NextBadge />}
 
           {item.tbc && <TBCBadge />}
