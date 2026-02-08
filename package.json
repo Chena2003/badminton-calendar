@@ -37,7 +37,7 @@
     "countries-and-timezones": "^3.2.3",
     "dayjs": "^1.11.5",
     "firebase": "^12.8.0",
-    "firebase-admin": "^13.6.0",
+    "firebase-admin": "^13.6.1",
     "google-auth-library": "^10.5.0",
     "i": "^0.3.7",
     "ics": "^3.4.0",
