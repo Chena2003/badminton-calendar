@@ -73,7 +73,7 @@
     "next-translate-plugin": "^2.6.1",
     "png-to-ico": "^3.0.1",
     "postcss": "^8.4.28",
-    "prettier": "^3.8.0",
+    "prettier": "^3.8.1",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.0.4",
     "vitest": "^4.0.18",
