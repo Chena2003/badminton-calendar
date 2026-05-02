@@ -125,8 +125,8 @@ const Race = ({
               )}
             </div>
           </div>
-          {item.isMajor && !item.canceled && <MajorEventBadge />}
           {isNextRace && !item.tbc && !item.canceled && <NextBadge />}
+          {item.isMajor && !item.canceled && <MajorEventBadge />}
 
           {item.tbc && <TBCBadge />}
 
