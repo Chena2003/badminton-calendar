@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import './globals.css';
 import { Metadata } from 'next';
 import PlausibleProvider from 'next-plausible';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
 import { UserContextProvider } from 'components/UserContext';
 import { League_Spartan } from 'next/font/google';
@@ -153,7 +155,11 @@ export default async function RootLayout({ children, params }: Props) {
                 />
               )}
             </head>
-            <body>{children}</body>
+            <body>
+              {children}
+              <Analytics />
+              <SpeedInsights />
+            </body>
           </html>
         </NextIntlClientProvider>
       </UserContextProvider>

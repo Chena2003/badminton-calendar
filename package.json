@@ -34,6 +34,8 @@
     "@ducanh2912/next-pwa": "^10.2.5",
     "@novu/node": "^2.0.1",
     "@tailwindcss/postcss": "^4.0.0",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "countries-and-timezones": "^3.2.3",
     "dayjs": "^1.11.5",
     "firebase": "^12.8.0",
