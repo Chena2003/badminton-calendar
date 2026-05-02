@@ -56,8 +56,10 @@ Create a `.env.local` file in the project root:
 
 ```env
 NEXT_PUBLIC_SITE_KEY=badminton
-NEXT_PUBLIC_CURRENT_YEAR=2025
+NEXT_PUBLIC_CURRENT_YEAR=2026
 ```
+
+For Vercel deployments, configure the same variables in the project settings for Production, Preview, and Development environments.
 
 ### Development
 
@@ -199,6 +201,21 @@ Themes are defined via CSS variables in `src/app/[locale]/globals.css`:
   /* ... */
 }
 ```
+
+## Deployment
+
+### Vercel
+
+The project can be deployed as a standard Next.js application on Vercel.
+
+Required Vercel environment variables:
+
+```env
+NEXT_PUBLIC_SITE_KEY=badminton
+NEXT_PUBLIC_CURRENT_YEAR=2026
+```
+
+`npm run build` is the production build command. The Vercel Hobby plan only supports daily Cron Jobs, so `vercel.json` does not define Vercel Cron schedules. Use an external scheduler or upgrade the Vercel plan if frequent scheduled jobs are needed.
 
 ## Testing
 

@@ -89,10 +89,11 @@ jspm_packages
 
 # Claude Code assistant files
 .claude/
-CLAUDE.md
 error
 nul
 
 
 # Deployment files
 /.edgeone/
+.vercel
+.env*.local
