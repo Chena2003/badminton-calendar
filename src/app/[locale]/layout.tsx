@@ -77,7 +77,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical,
       languages: createLanguageAlternates(),
     },
-    manifest: '/manifest.json',
+    manifest: '/site.webmanifest',
     icons: {
       icon: '/favicon.ico',
       shortcut: '/favicon.ico',
