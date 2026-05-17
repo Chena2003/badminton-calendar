@@ -67,7 +67,7 @@ export function UserContextProvider({ children }: Props) {
         
         // Store whether to collapse or show the past races.
         const storedCollapsedState = localStorage.getItem("collapsePastRaces");
-        updateStateCollapsePastRaces(storedCollapsedState == "true");
+        updateStateCollapsePastRaces(storedCollapsedState !== "false");
 
         // Theme initialization
         const storedTheme = localStorage.getItem("theme") as Theme;

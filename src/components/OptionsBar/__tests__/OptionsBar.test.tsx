@@ -72,7 +72,7 @@ describe('OptionsBar', () => {
     // Should show format select
     expect(screen.getByRole('combobox', { name: 'options.formatPicker.title' })).toBeInTheDocument();
     // Should show collapse past races checkbox
-    expect(screen.getByRole('checkbox', { name: 'hidePreviousRaces' })).toBeInTheDocument();
+    expect(screen.getByRole('checkbox', { name: 'hidePreviousRaces' })).toBeChecked();
   });
 
   it('collapses panel on confirm button click', async () => {

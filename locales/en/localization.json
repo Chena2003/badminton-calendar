@@ -37,9 +37,9 @@
       "subtitle": "Official BWF Schedule",
       "footnote": "All times are local and subject to change.",
       "seo": {
-        "description": "2025 BWF Tournament Calendar with complete schedule information for all Opens, Championships, and Finals.",
-        "keywords": "badminton,schedule,calendar,BWF,2025,open,world championships",
-        "title": "Badminton Schedule Calendar 2025"
+        "description": "{year} BWF Tournament Calendar with complete schedule information for all Opens, Championships, and Finals.",
+        "keywords": "badminton,schedule,calendar,BWF,{year},open,world championships",
+        "title": "Badminton Schedule Calendar {year}"
       }
     },
     "races": {
@@ -138,7 +138,7 @@
     },
     "header": {
       "title": "Badminton Schedule Calendar",
-      "subtitle": "2025 BWF Schedule"
+      "subtitle": "{year} BWF Schedule"
     },
     "form": {
       "title": "Generate Badminton Match Calendar",

@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm install` — install dependencies; Node.js 22.x is expected.
 - `npm run setPublicAssets` — copy site-specific files from `_public/$NEXT_PUBLIC_SITE_KEY` into `public/` and `src/app/`; `next.config.js` also runs this during Next startup/build.
 - `npm run dev` — start the Next.js development server.
-- `npm run build` — build the production Next.js app.
+- `npm run build` — build the production Next.js app; set `NEXT_PUBLIC_SITE_KEY=badminton NEXT_PUBLIC_CURRENT_YEAR=2026` locally if not already present.
 - `npm start` — run the production server after building.
 - `npm test` — run the Vitest test suite once.
 - `npm run test:watch` — run Vitest in watch mode.
@@ -29,6 +29,8 @@ NEXT_PUBLIC_CURRENT_YEAR=2026
 
 Optional environment variables used by the app include `NEXT_PUBLIC_PLAUSIBLE_KEY`, `NEXT_PUBLIC_GOOGLE_VERIFICATION`, Firebase public config, Postmark, Novu, and `EDGEONE_PAGES_PROJECT_NAME`.
 
+Vercel currently has `NEXT_PUBLIC_SITE_KEY` and `NEXT_PUBLIC_CURRENT_YEAR` configured for Production only. Use production deploys, or add the same variables to Preview before relying on preview deployments.
+
 ## Architecture overview
 
 This is a Next.js 15 App Router application with React 19. It renders a multilingual badminton tournament calendar, stores tournament data as JSON, and can generate ICS calendar downloads both dynamically through an API route and statically through build scripts.
@@ -40,6 +42,8 @@ Internationalized routes are under `src/app/[locale]/`. `src/middleware.ts` hand
 `src/app/[locale]/layout.tsx` wraps pages with `UserContextProvider` and `NextIntlClientProvider`, sets metadata from translations plus `_db/badminton/config.json`, and includes Plausible/PWA metadata. The main schedule page `src/app/[locale]/page.tsx` reads `_db/$NEXT_PUBLIC_SITE_KEY/$NEXT_PUBLIC_CURRENT_YEAR.json` and `config.json` from disk, then passes data into `Layout`, `OptionsBar`, and `Races`.
 
 Client-side user preferences are centralized in `src/components/UserContext.tsx`: timezone, 12/24-hour format, collapsed past races, theme, and UUID are persisted in `localStorage`. Components such as `OptionsBar`, `Races`, `Race`, and `RaceTR` consume this context to format schedules and control display behavior. Day/time rendering uses `dayjs` with `utc` and `timezone` plugins.
+
+Collapsed past races default to hidden for new visitors. Keep the `UserContext` default value and the missing-`localStorage` initialization aligned to `true`, while preserving stored `"false"` values for users who explicitly choose to show past matches.
 
 Calendar generation has two paths:
 
@@ -55,6 +59,7 @@ Tournament data is stored in `_db/badminton/YYYY.json` as a `races` array. Each 
 When adding or changing tournament data:
 
 - Add or update translations for `localeKey` in all locale files under `locales/*/localization.json`.
+- Use `{year}` placeholders for year-bearing SEO/header translation strings instead of hardcoding calendar years; metadata and header rendering pass `NEXT_PUBLIC_CURRENT_YEAR` as `year`.
 - Keep `sessions` ordered chronologically because UI logic uses the first and last object keys to determine date ranges and whether a race has occurred.
 - Keep `sessionTypes` aligned with session keys and with `_db/badminton/config.json` `sessionTypes` (`group`, `semifinal`, `final`).
 - Set `isMajor: true` only for Super 1000 open tournaments (`type: "open"`, `category: "1000"`), championships, Olympics, and finals. Categories 750, 500, 300, 100, and series should be `isMajor: false` unless the event type itself is one of those major types.

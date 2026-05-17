@@ -10,7 +10,7 @@ import CTABar from "../CTABar/CTABar";
 const Header = ({ year, showCTABar }) => {
 	const t = useTranslations('All');
 	const title = t(`${process.env.NEXT_PUBLIC_SITE_KEY}.title`);
-	const subtitle = t(`${process.env.NEXT_PUBLIC_SITE_KEY}.subtitle`);
+	const subtitle = t(`${process.env.NEXT_PUBLIC_SITE_KEY}.subtitle`, { year });
 
 	return (
 		<div className="w-full bg-dark-green mb-4">
